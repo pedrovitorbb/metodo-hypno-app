@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { modules } from '@/lib/modules-data';
 
 export default function ModulePage({ params }: { params: { moduleId: string } }) {
@@ -30,37 +29,11 @@ export default function ModulePage({ params }: { params: { moduleId: string } })
         </div>
       </div>
 
-      {params.moduleId === 'module1' ? (
-        // Usando uma tag <img> padrão, pois o next/image não está configurado para o imgur.com
-        <img
-          src="https://i.imgur.com/85NgJNK.png"
-          alt={module.title}
-          className="w-full h-auto rounded-lg shadow-lg"
-        />
-      ) : (
-        <Card>
-          <CardHeader>
-            <CardTitle>Conteúdo do Módulo</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-            <p>Aqui você encontrará vídeos, textos e materiais de apoio para este módulo.</p>
-            <p>O conteúdo para <strong className="text-foreground">{module.title}</strong> será adicionado em breve.</p>
-            
-            <div className="aspect-video my-6">
-              <iframe 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="YouTube video player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-                className="w-full h-full rounded-lg shadow-lg"
-                ></iframe>
-            </div>
-
-            <p>Fique atento para as atualizações!</p>
-          </CardContent>
-        </Card>
-      )}
+      <img
+        src={module.imageUrl}
+        alt={module.title}
+        className="w-full h-auto rounded-lg shadow-lg"
+      />
     </div>
   );
 }

@@ -17,6 +17,7 @@ export interface Module {
     icon: ReactNode;
     title: string;
     description: string;
+    imageUrl: string;
 }
 
 export const modules: Module[] = [
@@ -25,53 +26,62 @@ export const modules: Module[] = [
       icon: React.createElement(DoorOpen, { className: "h-8 w-8" }),
       title: '¡Bienvenidos!',
       description: 'Seja bem-vindo(a)! Tudo o que você precisa saber para começar.',
+      imageUrl: 'https://i.imgur.com/85NgJNK.png',
     },
     {
       id: 'module2',
       icon: React.createElement(PlayCircle, { className: "h-8 w-8" }),
       title: 'introducción',
       description: 'Os primeiros passos para sua jornada de aprendizado.',
+      imageUrl: 'https://i.imgur.com/xJHXKjI.png',
     },
     {
       id: 'module3',
       icon: React.createElement(Wand, { className: "h-8 w-8" }),
       title: 'técnicas',
       description: 'Aprenda a técnica central do método Hypno.',
+      imageUrl: 'https://i.imgur.com/JvvCofs.png',
     },
     {
       id: 'module4',
       icon: React.createElement(ClipboardList, { className: "h-8 w-8" }),
       title: 'Casos reales',
       description: 'Siga o protocolo passo a passo para aplicar a técnica.',
+      imageUrl: 'https://i.imgur.com/zdWkm8s.png',
     },
     {
       id: 'module5',
       icon: React.createElement(Scroll, { className: "h-8 w-8" }),
       title: 'Reduciendo el uso excesivo del celular',
       description: 'Scripts prontos para suas sessões de hipnose.',
+      imageUrl: 'https://i.imgur.com/pMo3NKr.png',
     },
     {
       id: 'module6',
       icon: React.createElement(AudioLines, { className: "h-8 w-8" }),
       title: 'Luto infantil',
       description: 'Sessões guiadas para aprofundar sua prática.',
+      imageUrl: 'https://i.imgur.com/OIBJvzm.png',
     },
     {
       id: 'module7',
       icon: React.createElement(FileText, { className: "h-8 w-8" }),
       title: 'Tic infantil',
       description: 'Explore técnicas de Programação Neurolinguística.',
+      imageUrl: 'https://i.imgur.com/zElS168.png',
     },
     {
       id: 'module8',
       icon: React.createElement(BookCopy, { className: "h-8 w-8" }),
       title: 'tartamudez',
       description: 'Recursos e materiais para complementar seu aprendizado.',
+      imageUrl: 'https://i.imgur.com/4w9q4jI.png',
     },
     {
       id: 'module9',
       icon: React.createElement(HelpCircle, { className: "h-8 w-8" }),
       title: 'problemas alimenticios',
       description: 'Gravações das sessões ao vivo para tirar dúvidas.',
+      imageUrl: 'https://i.imgur.com/alCDUIE.png',
     },
 ];

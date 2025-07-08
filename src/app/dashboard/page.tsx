@@ -1,4 +1,4 @@
-import { ModuleCard } from '@/components/module-card';
+import Link from 'next/link';
 import { modules } from '@/lib/modules-data';
 import {
   Carousel,
@@ -28,12 +28,13 @@ export default function DashboardPage() {
             {modules.map((module) => (
               <CarouselItem key={module.id} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1 h-full">
-                  <ModuleCard
-                    moduleId={module.id}
-                    icon={module.icon}
-                    title={module.title}
-                    description={module.description}
-                  />
+                   <Link href={`/dashboard/module/${module.id}`} className="block group">
+                     <img 
+                        src={module.imageUrl} 
+                        alt={module.title}
+                        className="w-full h-auto rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
+                     />
+                  </Link>
                 </div>
               </CarouselItem>
             ))}
