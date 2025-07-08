@@ -23,31 +23,31 @@ export const modules: Module[] = [
     {
       id: 'module1',
       icon: React.createElement(DoorOpen, { className: "h-8 w-8" }),
-      title: 'introducción',
+      title: '¡Bienvenidos!',
       description: 'Seja bem-vindo(a)! Tudo o que você precisa saber para começar.',
     },
     {
       id: 'module2',
       icon: React.createElement(PlayCircle, { className: "h-8 w-8" }),
-      title: 'Módulo 1 - Comece Por Aqui',
+      title: 'introducción',
       description: 'Os primeiros passos para sua jornada de aprendizado.',
     },
     {
       id: 'module3',
       icon: React.createElement(Wand, { className: "h-8 w-8" }),
-      title: 'Módulo 2 - A Técnica',
+      title: 'técnicas',
       description: 'Aprenda a técnica central do método Hypno.',
     },
     {
       id: 'module4',
       icon: React.createElement(ClipboardList, { className: "h-8 w-8" }),
-      title: 'Módulo 3 - O Protocolo',
+      title: 'Casos reales',
       description: 'Siga o protocolo passo a passo para aplicar a técnica.',
     },
     {
       id: 'module5',
       icon: React.createElement(Scroll, { className: "h-8 w-8" }),
-      title: 'Bônus - Scripts De Induções Hipnóticas',
+      title: 'Reduciendo el uso excesivo del celular',
       description: 'Scripts prontos para suas sessões de hipnose.',
     },
     {
