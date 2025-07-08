@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ExternalLink } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { modules } from '@/lib/modules-data';
 
@@ -27,16 +27,11 @@ export default function ModulePage({ params }: { params: { moduleId: string } })
 
       {module.pdfUrl && (
         <div className="mt-8">
-          <h2 className="font-headline text-3xl font-bold mb-4">Material de Apoio</h2>
-          <Button asChild>
-            <Link href={module.pdfUrl} target="_blank" rel="noopener noreferrer">
-              Abrir PDF
-              <ExternalLink className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-           <p className="mt-2 text-sm text-muted-foreground">
-            O material abrirá em uma nova aba do seu navegador.
-          </p>
+          <iframe
+            src={module.pdfUrl}
+            className="h-[80vh] w-full rounded-lg border"
+            allow="fullscreen"
+          ></iframe>
         </div>
       )}
     </div>

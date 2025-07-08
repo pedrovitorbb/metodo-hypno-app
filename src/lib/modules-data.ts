@@ -29,7 +29,7 @@ export const modules: Module[] = [
       title: 'Módulo 1',
       description: 'Seja bem-vindo(a)! Tudo o que você precisa saber para começar.',
       imageUrl: 'https://i.imgur.com/85NgJNK.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/elntlydmuzwzemdochyr5/Descubriendo-el-Poder-de-la-Hipnoterapia-Infantil.pdf?rlkey=fw4m0nxopz3rzlyl32g7z19p4&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/1RYuOR2lHkr-PHa3AUtJ-lEdoYFFkE8ZM/preview',
     },
     {
       id: 'module2',
@@ -37,7 +37,7 @@ export const modules: Module[] = [
       title: 'Módulo 2',
       description: 'Os primeiros passos para sua jornada de aprendizado.',
       imageUrl: 'https://i.imgur.com/xJHXKjI.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/8so6jjfpraemp71yar0a5/Hipnoterapia-Infantil-en-la-Practica.pdf?rlkey=4se0w4rljb9vgevk4cizeo344&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/112qJkCaY9TP9YTeNBtf7UWwKqUQgWdQF/preview',
     },
     {
       id: 'module3',
@@ -45,7 +45,7 @@ export const modules: Module[] = [
       title: 'Módulo 3',
       description: 'Aprenda a técnica central do método Hypno.',
       imageUrl: 'https://i.imgur.com/JvvCofs.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/as7atscnpi62c9inlae3b/Hipnoterapia-Infantil-SleepTalkr-Una-Tecnica-Revolucionaria-para-Padres-Conscientes.pdf?rlkey=l8d8hlpd3iroew77iprz7ppqf&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/1-j_t0cxp9DxzpdPjhm-_nCQi9Ms41-JI/preview',
     },
     {
       id: 'module4',
@@ -53,7 +53,7 @@ export const modules: Module[] = [
       title: 'Módulo 4',
       description: 'Siga o protocolo passo a passo para aplicar a técnica.',
       imageUrl: 'https://i.imgur.com/zdWkm8s.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/rodgh8iriewh7pfvml5c8/Hipnoterapia-Infantil-Casos-Reales-que-Transforman-Vidas.pdf?rlkey=hv49vfcn6xyubse6ov8w6d33q&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/13g5B5CkNgPrifLsbRVmuFn_Y0I_-oFAD/preview',
     },
     {
       id: 'module5',
@@ -61,7 +61,7 @@ export const modules: Module[] = [
       title: 'Módulo 5',
       description: 'Scripts prontos para suas sessões de hipnose.',
       imageUrl: 'https://i.imgur.com/pMo3NKr.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/qd7pzfzokjunxy9cuuttc/Desconectados-Estrategias-para-Reducir-el-Uso-Excesivo-del-Celular-en-Ninos.pdf?rlkey=tbxlptky3pmajwubly08bxnkv&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/1JmrWf1SkoYPQkrQ9FWLNTR6Lx8HG6TDZ/preview',
     },
     {
       id: 'module6',
@@ -69,7 +69,7 @@ export const modules: Module[] = [
       title: 'Módulo 6',
       description: 'Sessões guiadas para aprofundar sua prática.',
       imageUrl: 'https://i.imgur.com/OIBJvzm.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/rsc3udyjjtkpyehoa1gsk/Acompanando-el-Duelo-Infantil.pdf?rlkey=w0rdmfb2jx68l7ikhrd0dpoiu&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/14E6RyFFMZgHcjy6xbVJGXoibQxh0RWIs/preview',
     },
     {
       id: 'module7',
@@ -77,7 +77,7 @@ export const modules: Module[] = [
       title: 'Módulo 7',
       description: 'Explore técnicas de Programação Neurolinguística.',
       imageUrl: 'https://i.imgur.com/zElS168.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/dtr4z0oponjhitctt2y1y/Tics-Infantiles-Comprendiendo-y-Apoyando-a-Tu-Hijo.pdf?rlkey=d19m8tftzwpuwjb8xdtpialtp&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/1AnXbEeWC9dEG5equDSt12lyqxJFrSiyc/preview',
     },
     {
       id: 'module8',
@@ -85,7 +85,7 @@ export const modules: Module[] = [
       title: 'Módulo 8',
       description: 'Recursos e materiais para complementar seu aprendizado.',
       imageUrl: 'https://i.imgur.com/4w9q4jI.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/dm9duyg9j6gwrpjs27aju/Comprendiendo-y-Apoyando-la-Tartamudez-Infantil.pdf?rlkey=ct2naum469kepz5d6njiebxfq&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/1DQI91MVMuw0US_dY-jkyIRx-7vfV9z7F/preview',
     },
     {
       id: 'module9',
@@ -93,6 +93,6 @@ export const modules: Module[] = [
       title: 'Módulo 9',
       description: 'Gravações das sessões ao vivo para tirar dúvidas.',
       imageUrl: 'https://i.imgur.com/alCDUIE.png',
-      pdfUrl: 'https://www.dropbox.com/scl/fi/odj2gwt7hfomz097zg4cf/Problemas-Alimentarios-Infantiles-Guia-para-Padres-y-Cuidadores.pdf?rlkey=8qlw9hdft7ztj7cig0z84e7wv&raw=1',
+      pdfUrl: 'https://drive.google.com/file/d/15r77W9nTfCjAIbEyo5jf-8EDtTrb4HIA/preview',
     },
 ];
