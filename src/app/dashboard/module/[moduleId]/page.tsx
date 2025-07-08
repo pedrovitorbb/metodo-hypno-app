@@ -22,7 +22,6 @@ export default function ModulePage({ params }: { params: { moduleId: string } })
         </Link>
         <div className="mt-4">
           <h1 className="font-headline text-4xl font-bold">{module.title}</h1>
-          <p className="text-lg text-muted-foreground">{module.description}</p>
         </div>
       </div>
 
