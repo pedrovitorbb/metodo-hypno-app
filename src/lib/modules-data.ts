@@ -36,7 +36,7 @@ export const modules: Module[] = [
       title: 'introducción',
       description: 'Os primeiros passos para sua jornada de aprendizado.',
       imageUrl: 'https://i.imgur.com/xJHXKjI.png',
-      pdfUrl: '',
+      pdfUrl: 'https://www.dropbox.com/scl/fi/elntlydmuzwzemdochyr5/Descubriendo-el-Poder-de-la-Hipnoterapia-Infantil.pdf?rlkey=fw4m0nxopz3rzlyl32g7z19p4&st=lv7dqx1f&dl=1',
     },
     {
       id: 'module3',
