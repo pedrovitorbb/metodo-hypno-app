@@ -4,7 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/components/auth-provider';
 
 export const metadata: Metadata = {
-  title: 'Aurora Academy',
+  title: 'Método Hypno',
   description: 'Your modern members area.',
 };
 

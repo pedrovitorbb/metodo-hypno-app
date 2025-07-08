@@ -66,7 +66,7 @@ export default function LoginPage() {
        
       <div className="w-full max-w-md rounded-2xl border border-border/20 bg-card/80 p-8 shadow-2xl backdrop-blur-sm">
         <div className="text-center">
-          <h1 className="font-headline text-3xl font-bold text-primary">Aurora Academy</h1>
+          <h1 className="font-headline text-3xl font-bold text-primary">Método Hypno</h1>
           <p className="text-muted-foreground">Bem-vindo de volta! Faça login para continuar.</p>
         </div>
 

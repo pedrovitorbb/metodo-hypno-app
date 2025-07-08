@@ -71,7 +71,7 @@ export default function RegisterPage() {
       <div className="w-full max-w-md rounded-2xl border border-border/20 bg-card/80 p-8 shadow-2xl backdrop-blur-sm">
         <div className="text-center">
           <h1 className="font-headline text-3xl font-bold text-primary">Crie sua Conta</h1>
-          <p className="text-muted-foreground">Junte-se à Aurora Academy e comece a aprender.</p>
+          <p className="text-muted-foreground">Junte-se ao Método Hypno e comece a aprender.</p>
         </div>
 
         <form onSubmit={form.handleSubmit(onSubmit)} className="mt-8 space-y-6">
