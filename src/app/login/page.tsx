@@ -14,7 +14,6 @@ import { useToast } from '@/hooks/use-toast';
 import { signInWithEmail } from '@/lib/firebase/auth';
 import { Loader } from '@/components/ui/loader';
 import { useAuth } from '@/hooks/use-auth';
-import { FirebaseConfigReminder } from '@/components/firebase-config-reminder';
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Por favor, insira um e-mail válido.' }),
@@ -64,8 +63,6 @@ export default function LoginPage() {
     <div className="flex min-h-screen w-full flex-col items-center justify-center gap-6 bg-background p-4">
        <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[radial-gradient(#1E3A8A_1px,transparent_1px)] [background-size:16px_16px]"></div>
        
-       <FirebaseConfigReminder />
-
       <div className="w-full max-w-md rounded-2xl border border-border/20 bg-card/80 p-8 shadow-2xl backdrop-blur-sm">
         <div className="text-center">
           <h1 className="font-headline text-3xl font-bold text-primary">Aurora Academy</h1>
