@@ -53,25 +53,25 @@ export const modules: Module[] = [
     {
       id: 'module6',
       icon: React.createElement(AudioLines, { className: "h-8 w-8" }),
-      title: 'Bônus - Sessões De Hipnose Terapêutica',
+      title: 'Luto infantil',
       description: 'Sessões guiadas para aprofundar sua prática.',
     },
     {
       id: 'module7',
       icon: React.createElement(FileText, { className: "h-8 w-8" }),
-      title: 'Bônus - Scripts De PNL',
+      title: 'Tic infantil',
       description: 'Explore técnicas de Programação Neurolinguística.',
     },
     {
       id: 'module8',
       icon: React.createElement(BookCopy, { className: "h-8 w-8" }),
-      title: 'Bônus - Materiais De Apoio',
+      title: 'tartamudez',
       description: 'Recursos e materiais para complementar seu aprendizado.',
     },
     {
       id: 'module9',
       icon: React.createElement(HelpCircle, { className: "h-8 w-8" }),
-      title: 'Bônus - Sessão Tira Dúvidas',
+      title: 'problemas alimenticios',
       description: 'Gravações das sessões ao vivo para tirar dúvidas.',
     },
 ];
