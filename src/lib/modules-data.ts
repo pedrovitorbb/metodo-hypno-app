@@ -23,7 +23,7 @@ export const modules: Module[] = [
     {
       id: 'module1',
       icon: React.createElement(DoorOpen, { className: "h-8 w-8" }),
-      title: 'Boas Vindas',
+      title: 'introducción',
       description: 'Seja bem-vindo(a)! Tudo o que você precisa saber para começar.',
     },
     {
