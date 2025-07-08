@@ -1,39 +1,73 @@
 import { ModuleCard } from '@/components/module-card';
-import { BookOpen, Target, Code, FlaskConical, BarChartBig } from 'lucide-react';
+import {
+  DoorOpen,
+  PlayCircle,
+  Wand,
+  ClipboardList,
+  Scroll,
+  AudioLines,
+  FileText,
+  BookCopy,
+  HelpCircle,
+} from 'lucide-react';
 
-// You can customize the module content here
 const modules = [
   {
     id: 'module1',
-    icon: <BookOpen className="h-8 w-8" />,
-    title: 'Módulo 1: Introdução',
-    description: 'Comece sua jornada e entenda os conceitos fundamentais.',
+    icon: <DoorOpen className="h-8 w-8" />,
+    title: 'Boas Vindas',
+    description: 'Seja bem-vindo(a)! Tudo o que você precisa saber para começar.',
   },
   {
     id: 'module2',
-    icon: <Target className="h-8 w-8" />,
-    title: 'Módulo 2: Estratégias',
-    description: 'Aprenda as estratégias mais eficazes para o sucesso.',
+    icon: <PlayCircle className="h-8 w-8" />,
+    title: 'Módulo 1 - Comece Por Aqui',
+    description: 'Os primeiros passos para sua jornada de aprendizado.',
   },
   {
     id: 'module3',
-    icon: <Code className="h-8 w-8" />,
-    title: 'Módulo 3: Implementação',
-    description: 'Coloque a mão na massa e implemente o que aprendeu.',
+    icon: <Wand className="h-8 w-8" />,
+    title: 'Módulo 2 - A Técnica',
+    description: 'Aprenda a técnica central do método Hypno.',
   },
   {
     id: 'module4',
-    icon: <FlaskConical className="h-8 w-8" />,
-    title: 'Módulo 4: Testes',
-    description: 'Valide suas implementações com testes práticos.',
+    icon: <ClipboardList className="h-8 w-8" />,
+    title: 'Módulo 3 - O Protocolo',
+    description: 'Siga o protocolo passo a passo para aplicar a técnica.',
   },
   {
     id: 'module5',
-    icon: <BarChartBig className="h-8 w-8" />,
-    title: 'Módulo 5: Escala',
-    description: 'Descubra como escalar sua solução para mais usuários.',
+    icon: <Scroll className="h-8 w-8" />,
+    title: 'Bônus - Scripts De Induções Hipnóticas',
+    description: 'Scripts prontos para suas sessões de hipnose.',
+  },
+  {
+    id: 'module6',
+    icon: <AudioLines className="h-8 w-8" />,
+    title: 'Bônus - Sessões De Hipnose Terapêutica',
+    description: 'Sessões guiadas para aprofundar sua prática.',
+  },
+  {
+    id: 'module7',
+    icon: <FileText className="h-8 w-8" />,
+    title: 'Bônus - Scripts De PNL',
+    description: 'Explore técnicas de Programação Neurolinguística.',
+  },
+  {
+    id: 'module8',
+    icon: <BookCopy className="h-8 w-8" />,
+    title: 'Bônus - Materiais De Apoio',
+    description: 'Recursos e materiais para complementar seu aprendizado.',
+  },
+  {
+    id: 'module9',
+    icon: <HelpCircle className="h-8 w-8" />,
+    title: 'Bônus - Sessão Tira Dúvidas',
+    description: 'Gravações das sessões ao vivo para tirar dúvidas.',
   },
 ];
+
 
 export default function DashboardPage() {
   return (
