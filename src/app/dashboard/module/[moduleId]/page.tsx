@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { modules } from '@/lib/modules-data';
 
@@ -34,6 +34,17 @@ export default function ModulePage({ params }: { params: { moduleId: string } })
         alt={module.title}
         className="w-full h-auto rounded-lg shadow-lg"
       />
+
+      {module.pdfUrl && (
+        <div className="mt-8 flex justify-center">
+          <Link href={module.pdfUrl} target="_blank" rel="noopener noreferrer" passHref>
+            <Button size="lg">
+              <FileText className="mr-2 h-5 w-5" />
+              Ver Material de Apoio (PDF)
+            </Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

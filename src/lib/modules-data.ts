@@ -18,6 +18,7 @@ export interface Module {
     title: string;
     description: string;
     imageUrl: string;
+    pdfUrl?: string;
 }
 
 export const modules: Module[] = [
@@ -27,6 +28,7 @@ export const modules: Module[] = [
       title: '¡Bienvenidos!',
       description: 'Seja bem-vindo(a)! Tudo o que você precisa saber para começar.',
       imageUrl: 'https://i.imgur.com/85NgJNK.png',
+      pdfUrl: '',
     },
     {
       id: 'module2',
@@ -34,6 +36,7 @@ export const modules: Module[] = [
       title: 'introducción',
       description: 'Os primeiros passos para sua jornada de aprendizado.',
       imageUrl: 'https://i.imgur.com/xJHXKjI.png',
+      pdfUrl: '',
     },
     {
       id: 'module3',
@@ -41,6 +44,7 @@ export const modules: Module[] = [
       title: 'técnicas',
       description: 'Aprenda a técnica central do método Hypno.',
       imageUrl: 'https://i.imgur.com/JvvCofs.png',
+      pdfUrl: '',
     },
     {
       id: 'module4',
@@ -48,6 +52,7 @@ export const modules: Module[] = [
       title: 'Casos reales',
       description: 'Siga o protocolo passo a passo para aplicar a técnica.',
       imageUrl: 'https://i.imgur.com/zdWkm8s.png',
+      pdfUrl: '',
     },
     {
       id: 'module5',
@@ -55,6 +60,7 @@ export const modules: Module[] = [
       title: 'Reduciendo el uso excesivo del celular',
       description: 'Scripts prontos para suas sessões de hipnose.',
       imageUrl: 'https://i.imgur.com/pMo3NKr.png',
+      pdfUrl: '',
     },
     {
       id: 'module6',
@@ -62,6 +68,7 @@ export const modules: Module[] = [
       title: 'Luto infantil',
       description: 'Sessões guiadas para aprofundar sua prática.',
       imageUrl: 'https://i.imgur.com/OIBJvzm.png',
+      pdfUrl: '',
     },
     {
       id: 'module7',
@@ -69,6 +76,7 @@ export const modules: Module[] = [
       title: 'Tic infantil',
       description: 'Explore técnicas de Programação Neurolinguística.',
       imageUrl: 'https://i.imgur.com/zElS168.png',
+      pdfUrl: '',
     },
     {
       id: 'module8',
@@ -76,6 +84,7 @@ export const modules: Module[] = [
       title: 'tartamudez',
       description: 'Recursos e materiais para complementar seu aprendizado.',
       imageUrl: 'https://i.imgur.com/4w9q4jI.png',
+      pdfUrl: '',
     },
     {
       id: 'module9',
@@ -83,5 +92,6 @@ export const modules: Module[] = [
       title: 'problemas alimenticios',
       description: 'Gravações das sessões ao vivo para tirar dúvidas.',
       imageUrl: 'https://i.imgur.com/alCDUIE.png',
+      pdfUrl: '',
     },
 ];
