@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, FileText } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { modules } from '@/lib/modules-data';
 
@@ -20,29 +20,28 @@ export default function ModulePage({ params }: { params: { moduleId: string } })
             Voltar ao Painel
           </Button>
         </Link>
-        <div className="flex items-center gap-4 rounded-xl border bg-card p-6 shadow-sm">
-            <div className="text-primary">{module.icon}</div>
-            <div>
-                <h1 className="font-headline text-4xl font-bold">{module.title}</h1>
-                <p className="text-lg text-muted-foreground">{module.description}</p>
-            </div>
+        <div className="mt-4">
+          <h1 className="font-headline text-4xl font-bold">{module.title}</h1>
+          <p className="text-lg text-muted-foreground">{module.description}</p>
         </div>
       </div>
 
       <img
         src={module.imageUrl}
         alt={module.title}
-        className="w-full h-auto rounded-lg shadow-lg"
+        className="w-full h-auto rounded-lg shadow-lg mb-8"
       />
 
       {module.pdfUrl && (
-        <div className="mt-8 flex justify-center">
-          <Link href={module.pdfUrl} target="_blank" rel="noopener noreferrer" passHref>
-            <Button size="lg">
-              <FileText className="mr-2 h-5 w-5" />
-              Ver Material de Apoio (PDF)
-            </Button>
-          </Link>
+        <div className="mt-8">
+          <h2 className="font-headline text-3xl font-bold mb-4">Material de Apoio</h2>
+          <div className="w-full h-[80vh] rounded-lg overflow-hidden border">
+            <iframe
+              src={module.pdfUrl}
+              className="w-full h-full"
+              allow="fullscreen"
+            ></iframe>
+          </div>
         </div>
       )}
     </div>
