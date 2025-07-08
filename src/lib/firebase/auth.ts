@@ -21,11 +21,13 @@ const getFriendlyErrorMessage = (error: AuthError): string => {
         case 'auth/wrong-password':
             return 'E-mail ou senha incorretos.';
         case 'auth/email-already-in-use':
-            return 'Este e-mail já está em uso.';
+            return 'Este e-mail já está em uso. Por favor, tente fazer login.';
         case 'auth/weak-password':
-            return 'A senha deve ter pelo menos 6 caracteres.';
+            return 'A senha deve ter no mínimo 6 caracteres.';
+        case 'auth/operation-not-allowed':
+            return 'O método de login por e-mail/senha não está ativado. Por favor, vá para o Console do Firebase > Authentication > Sign-in method e ative o provedor de E-mail/Senha.';
         default:
-            return 'Ocorreu um erro. Tente novamente.';
+            return 'Ocorreu um erro inesperado. Por favor, tente novamente.';
     }
 }
 
