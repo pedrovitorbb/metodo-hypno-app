@@ -26,12 +26,6 @@ export default function ModulePage({ params }: { params: { moduleId: string } })
         </div>
       </div>
 
-      <img
-        src={module.imageUrl}
-        alt={module.title}
-        className="w-full h-auto rounded-lg shadow-lg mb-8"
-      />
-
       {module.pdfUrl && (
         <div className="mt-8">
           <h2 className="font-headline text-3xl font-bold mb-4">Material de Apoio</h2>
