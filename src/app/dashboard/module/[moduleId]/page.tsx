@@ -11,11 +11,12 @@ import { modules } from '@/lib/modules-data';
 import { useAuth } from '@/hooks/use-auth';
 
 export default function ModulePage({ params }: { params: { moduleId: string } }) {
+  const { moduleId } = params;
   const router = useRouter();
   const { plan, loading: authLoading } = useAuth();
-  const module = modules.find((m) => m.id === params.moduleId);
+  const module = modules.find((m) => m.id === moduleId);
 
-  const isLocked = plan !== 'premium' && parseInt(params.moduleId.replace('module', ''), 10) > 3;
+  const isLocked = plan !== 'premium' && parseInt(moduleId.replace('module', ''), 10) > 3;
 
   useEffect(() => {
     // If auth is done loading and the user is trying to access a locked module, redirect them.
