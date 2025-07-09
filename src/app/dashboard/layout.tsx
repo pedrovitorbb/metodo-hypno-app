@@ -29,7 +29,7 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="flex min-h-screen w-full flex-col">
+    <div className="flex min-h-screen w-full flex-col bg-background">
       <DashboardHeader />
       <main className="flex-1">{children}</main>
     </div>
