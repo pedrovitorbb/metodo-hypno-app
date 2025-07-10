@@ -4,13 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Mail, Lock, Loader2 } from 'lucide-react';
 import { auth } from '@/lib/firebase';
@@ -60,18 +54,18 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-[#003366] p-4">
-      <Card className="w-full max-w-md border-4 border-[#FFD700] bg-white text-gray-800 shadow-2xl">
+    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+      <Card className="w-full max-w-md border-border/40 bg-card/50 shadow-2xl backdrop-blur-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-[#003366]">Membro Acesso</CardTitle>
-          <CardDescription className="text-gray-600">
-            Faça login para continuar
+          <CardTitle className="text-3xl font-bold text-primary">Membro Acesso</CardTitle>
+          <CardDescription className="text-muted-foreground">
+            Faça login para continuar na plataforma
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 id="email"
                 type="email"
@@ -79,12 +73,12 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-10 text-base"
+                className="pl-10 text-base bg-secondary/50 border-border"
                 disabled={isLoading}
               />
             </div>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 id="password"
                 type="password"
@@ -92,7 +86,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="pl-10 text-base"
+                className="pl-10 text-base bg-secondary/50 border-border"
                 disabled={isLoading}
               />
             </div>
@@ -103,23 +97,23 @@ export default function LoginPage() {
             )}
             <Button
               type="submit"
-              className="w-full bg-[#FFD700] text-[#003366] text-lg font-semibold hover:bg-yellow-400 transition-colors duration-300"
+              className="w-full bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
               disabled={isLoading}
             >
-              {isLoading ? <Loader2 className="animate-spin" /> : 'Login'}
+              {isLoading ? <Loader2 className="animate-spin" /> : 'Entrar'}
             </Button>
           </form>
           <div className="mt-4 text-center text-sm">
             <Link
-              href="#"
-              className="font-medium text-[#FFD700] hover:underline"
+              href="/forgot-password"
+              className="font-medium text-primary/80 hover:underline hover:text-primary"
             >
               Esqueceu a senha?
             </Link>
           </div>
-          <div className="mt-6 text-center text-sm text-gray-600">
+          <div className="mt-6 text-center text-sm text-muted-foreground">
             Não possui uma conta?{' '}
-            <Link href="/register" className="font-bold text-[#003366] hover:underline">
+            <Link href="/register" className="font-bold text-primary hover:underline">
               Inscreva-se
             </Link>
           </div>
