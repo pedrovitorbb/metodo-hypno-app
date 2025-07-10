@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Home, User, Settings, LogOut } from 'lucide-react';
+import { Home, User, LogOut } from 'lucide-react';
 
 export function Header() {
   const navItems = [
     { href: '/dashboard', label: 'Home', icon: Home },
     { href: '/dashboard/profile', label: 'Perfil', icon: User },
-    { href: '#', label: 'Configurações', icon: Settings },
   ];
 
   return (
