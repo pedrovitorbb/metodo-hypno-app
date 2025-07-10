@@ -31,7 +31,7 @@ const modules = [
   },
   {
     imageUrl: 'https://i.imgur.com/pMo3NKr.png',
-    pdfUrl: 'https://drive.google.com/file/d/14E6RyFFMZgHcjy6xbVJGXoibQxh0RWIs/view?usp=drive_link',
+    pdfUrl: 'https://drive.google.com/file/d/1JmrWf1SkoYPQkrQ9FWLNTR6Lx8HG6TDZ/view?usp=drive_link',
   },
   {
     imageUrl: 'https://i.imgur.com/OIBJvzm.png',
