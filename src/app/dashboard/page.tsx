@@ -93,10 +93,10 @@ export default function DashboardPage() {
             }}
             className="w-full max-w-6xl"
           >
-            <CarouselContent>
+            <CarouselContent className="-ml-2">
               {modules.map((item, index) => (
-                <CarouselItem key={index} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3">
-                  <div className="p-4">
+                <CarouselItem key={index} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 pl-2">
+                  <div className="p-1">
                     <CarouselCard item={item} index={index} />
                   </div>
                 </CarouselItem>
