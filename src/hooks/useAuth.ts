@@ -17,11 +17,8 @@ export function useAuth() {
         setUser(currentUser);
       } else {
         setUser(null);
-        // Redirect to login page if user is not authenticated
-        // and is trying to access a protected route.
-        // This logic could be more sophisticated depending on which routes are protected.
-        // For simplicity, we can assume all routes under /dashboard require auth.
-        if (window.location.pathname.startsWith('/dashboard')) {
+        // This check ensures we are on the client side before accessing window
+        if (typeof window !== 'undefined' && window.location.pathname.startsWith('/dashboard')) {
             router.push('/login');
         }
       }
