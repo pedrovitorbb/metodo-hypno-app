@@ -12,40 +12,49 @@ import {
 
 const modules = [
   {
-    title: 'Introdução à Hipnoterapia',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600',
-    dataAiHint: 'welcome introduction',
+    title: 'Módulo 1',
+    image: 'https://i.imgur.com/85NgJNK.png',
+    dataAiHint: 'course module',
   },
   {
-    title: 'Técnicas de Indução',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600',
-    dataAiHint: 'hypnosis technique',
+    title: 'Módulo 2',
+    image: 'https://i.imgur.com/xJHXKjI.png',
+    dataAiHint: 'course module',
   },
   {
-    title: 'Aprofundamento do Transe',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600',
-    dataAiHint: 'deep focus',
+    title: 'Módulo 3',
+    image: 'https://i.imgur.com/JvvCofs.png',
+    dataAiHint: 'course module',
   },
   {
-    title: 'Sugestões Terapêuticas',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600',
-    dataAiHint: 'therapy session',
+    title: 'Módulo 4',
+    image: 'https://i.imgur.com/zdWkm8s.png',
+    dataAiHint: 'course module',
   },
   {
-    title: 'Tratamento de Fobias',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600',
-    dataAiHint: 'overcoming fear',
+    title: 'Módulo 5',
+    image: 'https://i.imgur.com/pMo3NKr.png',
+    dataAiHint: 'course module',
   },
   {
-    title: 'Controle da Dor',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600',
-    dataAiHint: 'pain relief',
+    title: 'Módulo 6',
+    image: 'https://i.imgur.com/OIBJvzm.png',
+    dataAiHint: 'course module',
+  },
+   {
+    title: 'Módulo 7',
+    image: 'https://i.imgur.com/zElS168.png',
+    dataAiHint: 'course module',
+  },
+  {
+    title: 'Módulo 8',
+    image: 'https://i.imgur.com/4w9q4jI.png',
+    dataAiHint: 'course module',
+  },
+  {
+    title: 'Módulo 9',
+    image: 'https://i.imgur.com/alCDUIE.png',
+    dataAiHint: 'course module',
   },
 ];
 
