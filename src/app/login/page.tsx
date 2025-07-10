@@ -24,7 +24,7 @@ export default function LoginPage() {
     setIsLoading(true);
 
     if (!email || !password) {
-      setError('Por favor, preencha todos os campos.');
+      setError('Por favor, rellena todos los campos.');
       setIsLoading(false);
       return;
     }
@@ -33,15 +33,15 @@ export default function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push('/dashboard');
     } catch (error: any) {
-      let errorMessage = 'Ocorreu um erro ao fazer login.';
+      let errorMessage = 'Ocurrió un error al iniciar sesión.';
       switch (error.code) {
         case 'auth/user-not-found':
         case 'auth/wrong-password':
         case 'auth/invalid-credential':
-          errorMessage = 'Email ou senha inválidos.';
+          errorMessage = 'Correo electrónico o contraseña no válidos.';
           break;
         case 'auth/invalid-email':
-          errorMessage = 'O formato do email é inválido.';
+          errorMessage = 'El formato del correo electrónico no es válido.';
           break;
         default:
           console.error(error);
@@ -57,9 +57,9 @@ export default function LoginPage() {
     <div className="flex min-h-screen w-full items-center justify-center bg-transparent p-4">
       <Card className="w-full max-w-md shadow-2xl bg-card/50 backdrop-blur-lg border-border/50">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-foreground">Acesse sua Conta</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Accede a tu Cuenta</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Bem-vindo(a) de volta!
+            ¡Bienvenido(a) de vuelta!
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -69,7 +69,7 @@ export default function LoginPage() {
               <Input
                 id="email"
                 type="email"
-                placeholder="Email"
+                placeholder="Correo Electrónico"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -82,7 +82,7 @@ export default function LoginPage() {
               <Input
                 id="password"
                 type="password"
-                placeholder="Senha"
+                placeholder="Contraseña"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -100,7 +100,7 @@ export default function LoginPage() {
                 href="/forgot-password"
                 className="font-medium text-muted-foreground hover:text-accent hover:underline"
               >
-                Esqueceu sua senha?
+                ¿Olvidaste tu contraseña?
               </Link>
             </div>
             <Button
@@ -112,9 +112,9 @@ export default function LoginPage() {
             </Button>
           </form>
            <div className="mt-6 text-center text-sm text-muted-foreground">
-            Não tem uma conta?{' '}
+            ¿No tienes una cuenta?{' '}
             <Link href="/register" className="font-bold text-accent hover:underline">
-              Crie uma agora
+              Crea una ahora
             </Link>
           </div>
         </CardContent>
