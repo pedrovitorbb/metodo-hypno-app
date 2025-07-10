@@ -15,7 +15,7 @@ import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { CheckCircle2, Loader2, Mail, Lock, User } from 'lucide-react';
 import { auth } from '@/lib/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 export default function RegisterPage() {
   const [name, setName] = useState('');
@@ -44,9 +44,8 @@ export default function RegisterPage() {
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      // Here you could also update the user's profile with the name,
-      // but for now, we'll just create the user.
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      await updateProfile(userCredential.user, { displayName: name });
       setIsSuccess(true);
     } catch (error: any) {
       let errorMessage = 'Ocorreu um erro ao criar a conta.';
@@ -66,23 +65,23 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      <Card className="w-full max-w-md border-border/40 bg-card/50 shadow-2xl backdrop-blur-lg">
+    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Crie sua Conta</CardTitle>
-          <CardDescription className="text-muted-foreground">
+          <CardTitle className="text-3xl font-bold text-primary-foreground">Crie sua Conta</CardTitle>
+          <CardDescription>
             Junte-se a nós hoje mesmo!
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSuccess ? (
-            <div className="text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
-              <AlertTitle className="mt-4 font-bold text-lg text-foreground">Sucesso!</AlertTitle>
+            <div className="text-center space-y-4">
+              <CheckCircle2 className="mx-auto h-16 w-16 text-green-500" />
+              <AlertTitle className="font-bold text-xl text-foreground">Sucesso!</AlertTitle>
               <AlertDescription className="text-muted-foreground">
                 Sua conta foi criada. Agora você pode fazer o login.
               </AlertDescription>
-              <Button onClick={() => router.push('/login')} className="mt-6 w-full bg-primary text-primary-foreground hover:bg-primary/90">
+              <Button onClick={() => router.push('/login')} className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 Ir para Login
               </Button>
             </div>
@@ -97,7 +96,7 @@ export default function RegisterPage() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="pl-10 text-base bg-secondary/50 border-border"
+                  className="pl-10 text-base bg-background"
                   disabled={isLoading}
                 />
               </div>
@@ -110,7 +109,7 @@ export default function RegisterPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 text-base bg-secondary/50 border-border"
+                  className="pl-10 text-base bg-background"
                   disabled={isLoading}
                 />
               </div>
@@ -123,7 +122,7 @@ export default function RegisterPage() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="pl-10 text-base bg-secondary/50 border-border"
+                  className="pl-10 text-base bg-background"
                   disabled={isLoading}
                 />
               </div>
@@ -134,7 +133,7 @@ export default function RegisterPage() {
               )}
               <Button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
+                className="w-full bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all duration-300"
                 disabled={isLoading}
               >
                 {isLoading ? <Loader2 className="animate-spin" /> : 'Inscrever-se'}
@@ -143,7 +142,7 @@ export default function RegisterPage() {
           )}
           <div className="mt-6 text-center text-sm text-muted-foreground">
             Já possui uma conta?{' '}
-            <Link href="/login" className="font-bold text-primary hover:underline">
+            <Link href="/login" className="font-bold text-primary-foreground hover:underline">
               Login
             </Link>
           </div>

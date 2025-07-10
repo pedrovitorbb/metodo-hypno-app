@@ -54,12 +54,12 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      <Card className="w-full max-w-md border-border/40 bg-card/50 shadow-2xl backdrop-blur-lg">
+    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Acceso de miembro</CardTitle>
-          <CardDescription className="text-muted-foreground">
-            Inicia sesión para continuar en la plataform
+          <CardTitle className="text-3xl font-bold text-primary-foreground">Acceso de miembro</CardTitle>
+          <CardDescription>
+            Inicia sesión para continuar en la plataforma
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -73,7 +73,7 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="pl-10 text-base bg-secondary/50 border-border"
+                className="pl-10 text-base bg-background"
                 disabled={isLoading}
               />
             </div>
@@ -86,7 +86,7 @@ export default function LoginPage() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="pl-10 text-base bg-secondary/50 border-border"
+                className="pl-10 text-base bg-background"
                 disabled={isLoading}
               />
             </div>
@@ -97,7 +97,7 @@ export default function LoginPage() {
             )}
             <Button
               type="submit"
-              className="w-full bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
+              className="w-full bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all duration-300"
               disabled={isLoading}
             >
               {isLoading ? <Loader2 className="animate-spin" /> : 'Entrar'}
@@ -106,9 +106,15 @@ export default function LoginPage() {
           <div className="mt-4 text-center text-sm">
             <Link
               href="/forgot-password"
-              className="font-medium text-primary/80 hover:underline hover:text-primary"
+              className="font-medium text-primary-foreground/80 hover:underline hover:text-primary-foreground"
             >
               ¿Olvidaste tu contraseña?
+            </Link>
+          </div>
+           <div className="mt-6 text-center text-sm text-muted-foreground">
+            Não tem uma conta?{' '}
+            <Link href="/register" className="font-bold text-primary-foreground hover:underline">
+              Registre-se
             </Link>
           </div>
         </CardContent>

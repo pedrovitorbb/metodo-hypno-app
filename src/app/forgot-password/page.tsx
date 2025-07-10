@@ -46,24 +46,24 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
-      <Card className="w-full max-w-md border-border/40 bg-card/50 shadow-2xl backdrop-blur-lg">
+    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4">
+      <Card className="w-full max-w-md shadow-2xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Recuperar Senha</CardTitle>
-          <CardDescription className="text-muted-foreground">
+          <CardTitle className="text-3xl font-bold text-primary-foreground">Recuperar Senha</CardTitle>
+          <CardDescription>
             Insira seu email para redefinir sua senha
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSuccess ? (
-             <div className="text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-green-500" />
-              <AlertTitle className="mt-4 font-bold text-lg text-foreground">Email Enviado!</AlertTitle>
+             <div className="text-center space-y-4">
+              <CheckCircle2 className="mx-auto h-16 w-16 text-green-500" />
+              <AlertTitle className="font-bold text-xl text-foreground">Email Enviado!</AlertTitle>
               <AlertDescription className="text-muted-foreground">
                 Verifique sua caixa de entrada para as instruções de redefinição.
               </AlertDescription>
               <Link href="/login" className="block mt-4">
-                 <Button className="mt-6 w-full bg-primary text-primary-foreground hover:bg-primary/90">Voltar para Login</Button>
+                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Voltar para Login</Button>
               </Link>
             </div>
           ) : (
@@ -77,7 +77,7 @@ export default function ForgotPasswordPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 text-base bg-secondary/50 border-border"
+                  className="pl-10 text-base bg-background"
                   disabled={isLoading}
                 />
               </div>
@@ -88,7 +88,7 @@ export default function ForgotPasswordPage() {
               )}
               <Button
                 type="submit"
-                className="w-full bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
+                className="w-full bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all duration-300"
                 disabled={isLoading}
               >
                 {isLoading ? <Loader2 className="animate-spin" /> : 'Enviar Email'}
@@ -97,7 +97,7 @@ export default function ForgotPasswordPage() {
           )}
           <div className="mt-6 text-center text-sm text-muted-foreground">
             Lembrou a senha?{' '}
-            <Link href="/login" className="font-bold text-primary hover:underline">
+            <Link href="/login" className="font-bold text-primary-foreground hover:underline">
               Login
             </Link>
           </div>
