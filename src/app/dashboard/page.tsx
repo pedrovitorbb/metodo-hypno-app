@@ -59,8 +59,9 @@ const CarouselCard = ({ item, index }: { item: typeof modules[0], index: number 
             src={item.imageUrl}
             alt={`Módulo ${index + 1}`}
             fill
-            className="object-cover"
+            className="object-contain"
             data-ai-hint="course module"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </CardContent>
       </Card>
@@ -94,7 +95,7 @@ export default function DashboardPage() {
           >
             <CarouselContent>
               {modules.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2">
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 md:p-4">
                     <CarouselCard item={item} index={index} />
                   </div>
