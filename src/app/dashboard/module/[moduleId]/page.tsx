@@ -51,7 +51,7 @@ export default function ModuleViewPage() {
 
   return (
     <div className="flex flex-col flex-grow bg-transparent py-8 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto flex-grow flex flex-col h-full">
+      <div className="container mx-auto flex flex-col h-full flex-grow">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <Link href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground flex items-center mb-2">
