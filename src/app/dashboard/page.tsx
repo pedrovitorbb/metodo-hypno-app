@@ -11,6 +11,7 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
+import { Footer } from '@/components/layout/Footer';
 
 const modules = [
   {
@@ -80,33 +81,34 @@ const CarouselCard = ({ item, index }: { item: typeof modules[0], index: number 
 
 export default function DashboardPage() {
   return (
-    <div className="flex h-full w-full items-center justify-center bg-background">
-      <div className="container mx-auto">
-        <h1 className="mb-12 text-center text-4xl font-bold text-primary">
-          ¡Bienvenidos!
-        </h1>
-        <div className="flex justify-center">
-          <Carousel
-            opts={{
-              align: 'center',
-              loop: true,
-            }}
-            className="w-full max-w-6xl"
-          >
-            <CarouselContent className="-ml-2">
-              {modules.map((item, index) => (
-                <CarouselItem key={index} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 pl-2">
-                  <div className="p-1">
-                    <CarouselCard item={item} index={index} />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="text-primary hover:text-primary-foreground hover:bg-primary" />
-            <CarouselNext className="text-primary hover:text-primary-foreground hover:bg-primary" />
-          </Carousel>
+    <div className="flex flex-col min-h-full w-full bg-background">
+      <div className="flex-grow flex items-end justify-center">
+        <div className="container mx-auto pb-12">
+            <h1 className="mb-12 text-center text-4xl font-bold text-primary">
+            ¡Bienvenidos!
+            </h1>
+            <div className="flex justify-center">
+            <Carousel
+                opts={{
+                align: 'center',
+                loop: true,
+                }}
+                className="w-full max-w-6xl"
+            >
+                <CarouselContent>
+                {modules.map((item, index) => (
+                    <CarouselItem key={index} className="basis-full sm:basis-1/2 md:basis-1/2 lg:basis-1/3 px-2">
+                        <CarouselCard item={item} index={index} />
+                    </CarouselItem>
+                ))}
+                </CarouselContent>
+                <CarouselPrevious className="text-primary hover:text-primary-foreground hover:bg-primary" />
+                <CarouselNext className="text-primary hover:text-primary-foreground hover:bg-primary" />
+            </Carousel>
+            </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
