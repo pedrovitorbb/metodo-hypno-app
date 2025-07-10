@@ -60,12 +60,6 @@ export default function LoginPage() {
               Esqueceu a senha?
             </Link>
           </div>
-          <div className="mt-6 text-center text-sm">
-            Não tem uma conta?{' '}
-            <Link href="/register" className="font-bold text-[#003366] hover:underline">
-              Inscreva-se
-            </Link>
-          </div>
         </CardContent>
       </Card>
     </div>
