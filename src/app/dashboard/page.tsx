@@ -28,7 +28,7 @@ const ModuleCard = ({ title, index, isCompleted, imageUrl }: { title: string, in
     <Link href={`/dashboard/module/${index}`} className="block group">
       <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/80 transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl h-full flex flex-col overflow-hidden">
         <CardContent className="p-0 flex-grow flex flex-col justify-between">
-            <div className="relative w-full h-80">
+            <div className="relative w-full h-96">
                  <Image src={imageUrl} alt={`Capa do módulo ${title}`} layout="fill" objectFit="cover" />
             </div>
             <div className="p-4 bg-card/80">
@@ -82,15 +82,15 @@ export default function DashboardPage() {
             <CarouselContent className="-ml-4">
               {isLoading ? (
                 Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={index} className="pl-4 sm:basis-1/2 lg:basis-1/3">
                     <div className="p-1">
-                      <Skeleton className="h-96 w-full bg-card/80" />
+                      <Skeleton className="h-[28rem] w-full bg-card/80" />
                     </div>
                   </CarouselItem>
                 ))
               ) : (
                 modules.map((item, index) => (
-                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={index} className="pl-4 sm:basis-1/2 lg:basis-1/3">
                      <div className="p-1">
                         <ModuleCard 
                           title={item.title} 
