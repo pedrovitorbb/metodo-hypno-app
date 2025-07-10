@@ -23,11 +23,10 @@ const ModuleCard = ({ title, index, isCompleted, imageUrl }: { title: string, in
     <Link href={`/dashboard/module/${index}`} className="block group">
       <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/80 transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl h-full flex flex-col overflow-hidden">
         <CardContent className="p-0 flex-grow flex flex-col justify-between">
-            <div className="relative w-full h-40">
+            <div className="relative w-full h-52">
                  <Image src={imageUrl} alt={`Capa do módulo ${title}`} layout="fill" objectFit="cover" />
             </div>
             <div className="p-4 bg-card/80">
-                <p className="text-lg font-medium text-foreground mb-2">{title}</p>
                 {isCompleted ?
                     <div className="text-xs text-green-400 flex items-center font-semibold">
                         <CheckCircle className="mr-1.5 h-4 w-4"/> Concluído
@@ -71,7 +70,7 @@ export default function DashboardPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {isLoading ? (
             Array.from({ length: 5 }).map((_, index) => (
-                <Skeleton key={index} className="h-52 w-full bg-card/80" />
+                <Skeleton key={index} className="h-64 w-full bg-card/80" />
             ))
           ) : (
             modules.map((item, index) => (
