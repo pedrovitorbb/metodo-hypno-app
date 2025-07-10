@@ -1,12 +1,13 @@
+
 'use client';
 
 import React from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { useAuth } from '@/hooks/useAuth';
 import { useProgress } from '@/hooks/useProgress';
 import { Skeleton } from '@/components/ui/skeleton';
-import { CheckCircle, Circle, BookOpen } from 'lucide-react';
+import { CheckCircle, Circle } from 'lucide-react';
 import Image from 'next/image';
 
 const modules = [
@@ -20,24 +21,23 @@ const modules = [
 const ModuleCard = ({ title, index, isCompleted, imageUrl }: { title: string, index: number, isCompleted: boolean, imageUrl: string }) => {
   return (
     <Link href={`/dashboard/module/${index}`} className="block group">
-      <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/80 transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl h-full flex flex-col">
-        <CardHeader className="flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-lg font-medium text-foreground">{title}</CardTitle>
-          <BookOpen className="h-6 w-6 text-muted-foreground" />
-        </CardHeader>
-        <CardContent className="flex-grow flex flex-col justify-between">
-            <div className="relative w-full h-32 mb-4 rounded-md overflow-hidden">
+      <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/80 transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl h-full flex flex-col overflow-hidden">
+        <CardContent className="p-0 flex-grow flex flex-col justify-between">
+            <div className="relative w-full h-40">
                  <Image src={imageUrl} alt={`Capa do módulo ${title}`} layout="fill" objectFit="cover" />
             </div>
-            {isCompleted ?
-                <div className="text-xs text-green-400 flex items-center font-semibold">
-                    <CheckCircle className="mr-1.5 h-4 w-4"/> Concluído
-                </div>
-                :
-                <div className="text-xs text-muted-foreground flex items-center">
-                    <Circle className="mr-1.5 h-4 w-4"/> Pendente
-                </div>
-            }
+            <div className="p-4 bg-card/80">
+                <p className="text-lg font-medium text-foreground mb-2">{title}</p>
+                {isCompleted ?
+                    <div className="text-xs text-green-400 flex items-center font-semibold">
+                        <CheckCircle className="mr-1.5 h-4 w-4"/> Concluído
+                    </div>
+                    :
+                    <div className="text-xs text-muted-foreground flex items-center">
+                        <Circle className="mr-1.5 h-4 w-4"/> Pendente
+                    </div>
+                }
+            </div>
         </CardContent>
       </Card>
     </Link>
