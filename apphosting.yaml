@@ -5,3 +5,19 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+<<<<<<< HEAD
+=======
+
+# This rewrites all requests to the Next.js server
+headers:
+  - host: 'login-67c98.web.app'
+    source: '/(.*)'
+    destination: 'https://login-67c98--q7k3ekq9.web.app'
+
+# This is a legacy feature that should not be used for Next.js apps
+# We are removing it.
+#
+# rewrites:
+# - source: /
+#   destination: /index.html
+>>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
