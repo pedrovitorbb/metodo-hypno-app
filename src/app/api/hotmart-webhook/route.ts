@@ -42,7 +42,8 @@ export async function POST(request: Request) {
     
     // 5. Determinar o Plano do Usuário
     let plan = 'basic';
-    if (productId && productId.toString() === process.env.HOTMART_PREMIUM_PRODUCT_ID) {
+    // O ID '5856333' corresponde ao produto premium
+    if (productId && productId.toString() === '5856333') {
       plan = 'premium';
     }
 
