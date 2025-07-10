@@ -32,13 +32,13 @@ export default function RegisterPage() {
     setIsLoading(true);
 
     if (!name || !email || !password) {
-      setError('Por favor, preencha todos os campos.');
+      setError('Por favor, rellena todos los campos.');
       setIsLoading(false);
       return;
     }
 
     if (password.length < 6) {
-      setError('A senha deve ter pelo menos 6 caracteres.');
+      setError('La contraseña debe tener al menos 6 caracteres.');
       setIsLoading(false);
       return;
     }
@@ -48,13 +48,13 @@ export default function RegisterPage() {
       await updateProfile(userCredential.user, { displayName: name });
       setIsSuccess(true);
     } catch (error: any) {
-      let errorMessage = 'Ocorreu um erro ao criar a conta.';
+      let errorMessage = 'Ocurrió un error al crear la cuenta.';
       if (error.code === 'auth/email-already-in-use') {
-        errorMessage = 'Este email já está em uso por outra conta.';
+        errorMessage = 'Este correo electrónico ya está en uso por otra cuenta.';
       } else if (error.code === 'auth/invalid-email') {
-        errorMessage = 'O formato do email é inválido.';
+        errorMessage = 'El formato del correo electrónico es inválido.';
       } else if (error.code === 'auth/weak-password') {
-        errorMessage = 'A senha é muito fraca.';
+        errorMessage = 'La contraseña es muy débil.';
       } else {
         console.error(error);
       }
@@ -68,21 +68,21 @@ export default function RegisterPage() {
     <div className="flex min-h-screen w-full items-center justify-center bg-transparent p-4">
       <Card className="w-full max-w-md shadow-2xl bg-card/50 backdrop-blur-lg border-border/50">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-foreground">Crie sua Conta</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Crea tu Cuenta</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Rápido e fácil. Comece agora!
+            Rápido y fácil. ¡Comienza ahora!
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSuccess ? (
             <div className="text-center space-y-4">
               <CheckCircle2 className="mx-auto h-16 w-16 text-green-500" />
-              <AlertTitle className="font-bold text-xl text-foreground">Conta Criada!</AlertTitle>
+              <AlertTitle className="font-bold text-xl text-foreground">¡Cuenta Creada!</AlertTitle>
               <AlertDescription className="text-muted-foreground">
-                Seja bem-vindo(a)! Você será redirecionado para o login.
+                ¡Bienvenido(a)! Serás redirigido para iniciar sesión.
               </AlertDescription>
               <Button onClick={() => router.push('/login')} className="w-full bg-primary group">
-                Ir para Login <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Ir a Iniciar Sesión <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </div>
           ) : (
@@ -92,7 +92,7 @@ export default function RegisterPage() {
                 <Input
                   id="name"
                   type="text"
-                  placeholder="Nome Completo"
+                  placeholder="Nombre Completo"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -105,7 +105,7 @@ export default function RegisterPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Correo Electrónico"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -118,7 +118,7 @@ export default function RegisterPage() {
                 <Input
                   id="password"
                   type="password"
-                  placeholder="Senha (mín. 6 caracteres)"
+                  placeholder="Contraseña (mín. 6 caracteres)"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -136,14 +136,14 @@ export default function RegisterPage() {
                 className="w-full bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-all duration-300"
                 disabled={isLoading}
               >
-                {isLoading ? <Loader2 className="animate-spin" /> : 'Criar minha conta'}
+                {isLoading ? <Loader2 className="animate-spin" /> : 'Crear mi cuenta'}
               </Button>
             </form>
           )}
           <div className="mt-6 text-center text-sm text-muted-foreground">
-            Já possui uma conta?{' '}
+            ¿Ya tienes una cuenta?{' '}
             <Link href="/login" className="font-bold text-accent hover:underline">
-              Faça Login
+              Inicia Sesión
             </Link>
           </div>
         </CardContent>

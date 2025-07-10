@@ -75,8 +75,8 @@ export default function ProfilePage() {
       if (email !== user.email) {
         if (!currentPassword) {
             toast({
-                title: "Senha necessária",
-                description: "Por favor, insira sua senha atual para alterar o email.",
+                title: "Contraseña requerida",
+                description: "Por favor, ingrese su contraseña actual para cambiar el correo electrónico.",
                 variant: "destructive",
             });
             setIsSubmitting(false);
@@ -95,8 +95,8 @@ export default function ProfilePage() {
       
       if (tasks.length === 0) {
          toast({
-            title: "Nenhuma alteração",
-            description: "Você não modificou nenhum campo.",
+            title: "Sin cambios",
+            description: "No has modificado ningún campo.",
         });
         setIsSubmitting(false);
         return
@@ -105,21 +105,21 @@ export default function ProfilePage() {
       await Promise.all(tasks);
 
       toast({
-        title: "Sucesso!",
-        description: "Seu perfil foi atualizado.",
+        title: "¡Éxito!",
+        description: "Tu perfil ha sido actualizado.",
       });
 
     } catch (err: any) {
-      let message = "Ocorreu um erro ao atualizar o perfil.";
+      let message = "Ocurrió un error al actualizar el perfil.";
       if (err.code === 'auth/wrong-password') {
-        message = "A senha atual está incorreta.";
+        message = "La contraseña actual es incorrecta.";
       } else if (err.code === 'auth/email-already-in-use') {
-        message = "Este email já está em uso por outra conta."
+        message = "Este correo electrónico ya está en uso por otra cuenta."
       } else if (err.message) {
         message = err.message;
       }
       toast({
-        title: "Erro ao atualizar",
+        title: "Error al actualizar",
         description: message,
         variant: "destructive",
       });
@@ -134,13 +134,13 @@ export default function ProfilePage() {
       <div className="flex flex-grow items-center justify-center p-4">
         <Card className="w-full max-w-2xl shadow-2xl bg-card/50 backdrop-blur-lg border-border/50">
           <CardHeader>
-            <CardTitle className="text-3xl font-bold text-foreground">Meu Perfil</CardTitle>
-            <CardDescription className="text-muted-foreground">Gerencie suas informações pessoais e de acesso.</CardDescription>
+            <CardTitle className="text-3xl font-bold text-foreground">Mi Perfil</CardTitle>
+            <CardDescription className="text-muted-foreground">Gestiona tu información personal y de acceso.</CardDescription>
           </CardHeader>
           <CardContent className="pt-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="space-y-2">
-                <Label htmlFor="name" className="flex items-center gap-2 text-base"><User /> Nome de Exibição</Label>
+                <Label htmlFor="name" className="flex items-center gap-2 text-base"><User /> Nombre de Usuario</Label>
                 <Input
                   id="name"
                   value={name}
@@ -149,7 +149,7 @@ export default function ProfilePage() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email" className="flex items-center gap-2 text-base"><Mail /> Email</Label>
+                <Label htmlFor="email" className="flex items-center gap-2 text-base"><Mail /> Correo Electrónico</Label>
                 <Input
                   id="email"
                   type="email"
@@ -160,21 +160,21 @@ export default function ProfilePage() {
               </div>
               {email !== user.email && (
                 <div className="space-y-3 rounded-md border border-accent/30 bg-accent/10 p-4">
-                  <Label htmlFor="currentPassword" className="flex items-center gap-2 font-semibold text-accent"><ShieldCheck /> Senha Atual</Label>
-                   <p className="text-sm text-accent/80">Para sua segurança, confirme sua senha para alterar o email.</p>
+                  <Label htmlFor="currentPassword" className="flex items-center gap-2 font-semibold text-accent"><ShieldCheck /> Contraseña Actual</Label>
+                   <p className="text-sm text-accent/80">Para tu seguridad, confirma tu contraseña para cambiar el correo.</p>
                   <Input
                     id="currentPassword"
                     type="password"
                     value={currentPassword}
                     onChange={(e) => setCurrentPassword(e.target.value)}
                     required
-                    placeholder="Sua senha atual"
+                    placeholder="Tu contraseña actual"
                     className="bg-input border-border/50 focus:border-accent"
                   />
                 </div>
               )}
               <Button type="submit" disabled={isSubmitting} className="bg-primary text-primary-foreground hover:bg-primary/90">
-                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Salvar Alterações'}
+                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Guardar Cambios'}
               </Button>
             </form>
           </CardContent>

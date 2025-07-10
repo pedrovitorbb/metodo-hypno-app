@@ -22,7 +22,7 @@ export default function ForgotPasswordPage() {
     setIsLoading(true);
 
     if (!email) {
-      setError('Por favor, insira seu email.');
+      setError('Por favor, ingrese su correo electrónico.');
       setIsLoading(false);
       return;
     }
@@ -31,11 +31,11 @@ export default function ForgotPasswordPage() {
       await sendPasswordResetEmail(auth, email);
       setIsSuccess(true);
     } catch (error: any) {
-      let errorMessage = 'Ocorreu um erro ao enviar o email.';
+      let errorMessage = 'Ocurrió un error al enviar el correo electrónico.';
       if (error.code === 'auth/user-not-found') {
-        errorMessage = 'Nenhuma conta encontrada com este email.';
+        errorMessage = 'No se encontró ninguna cuenta con este correo electrónico.';
       } else if (error.code === 'auth/invalid-email') {
-        errorMessage = 'O formato do email é inválido.';
+        errorMessage = 'El formato del correo electrónico es inválido.';
       } else {
         console.error(error);
       }
@@ -49,23 +49,23 @@ export default function ForgotPasswordPage() {
     <div className="flex min-h-screen w-full items-center justify-center bg-transparent p-4">
       <Card className="w-full max-w-md shadow-2xl bg-card/50 backdrop-blur-lg border-border/50">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-foreground">Recuperar Senha</CardTitle>
+          <CardTitle className="text-3xl font-bold text-foreground">Recuperar Contraseña</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Insira seu email para redefinir sua senha
+            Ingrese su correo para restablecer su contraseña
           </CardDescription>
         </CardHeader>
         <CardContent>
           {isSuccess ? (
              <div className="text-center space-y-4">
               <CheckCircle2 className="mx-auto h-16 w-16 text-green-500" />
-              <AlertTitle className="font-bold text-xl text-foreground">Email Enviado!</AlertTitle>
+              <AlertTitle className="font-bold text-xl text-foreground">¡Correo Enviado!</AlertTitle>
               <AlertDescription className="text-muted-foreground">
-                Verifique sua caixa de entrada para as instruções de redefinição.
+                Revise su bandeja de entrada para las instrucciones de restablecimiento.
               </AlertDescription>
               <Link href="/login" className="block mt-4">
                  <Button variant="outline" className="w-full group">
                     <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"/>
-                    Voltar para Login
+                    Volver a Iniciar Sesión
                  </Button>
               </Link>
             </div>
@@ -76,7 +76,7 @@ export default function ForgotPasswordPage() {
                 <Input
                   id="email"
                   type="email"
-                  placeholder="seu@email.com"
+                  placeholder="su@email.com"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -94,14 +94,14 @@ export default function ForgotPasswordPage() {
                 className="w-full bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all duration-300"
                 disabled={isLoading}
               >
-                {isLoading ? <Loader2 className="animate-spin" /> : 'Enviar Email de Recuperação'}
+                {isLoading ? <Loader2 className="animate-spin" /> : 'Enviar Correo de Recuperación'}
               </Button>
             </form>
           )}
           <div className="mt-6 text-center text-sm text-muted-foreground">
-            Lembrou a senha?{' '}
+            ¿Recordaste la contraseña?{' '}
             <Link href="/login" className="font-bold text-accent hover:underline">
-              Login
+              Iniciar Sesión
             </Link>
           </div>
         </CardContent>

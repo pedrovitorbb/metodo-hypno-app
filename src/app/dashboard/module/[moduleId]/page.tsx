@@ -11,11 +11,11 @@ import { useAuth } from '@/hooks/useAuth';
 import { useProgress } from '@/hooks/useProgress';
 
 const modules = [
-    { title: "Introdução", pdfUrl: 'https://drive.google.com/file/d/1RYuOR2lHkr-PHa3AUtJ-lEdoYFFkE8ZM/view?usp=drive_link' },
-    { title: "Estratégias", pdfUrl: 'https://drive.google.com/file/d/112qJkCaY9TP9YTeNBtf7UWwKqUQgWdQF/view?usp=drive_link' },
-    { title: "Implementação", pdfUrl: 'https://drive.google.com/file/d/1-j_t0cxp9DxzpdPjhm-_nCQi9Ms41-JI/view?usp=drive_link' },
-    { title: "Testes", pdfUrl: 'https://drive.google.com/file/d/13g5B5CkNgPrifLsbRVmuFn_Y0I_-oFAD/view?usp=drive_link' },
-    { title: "Escala", pdfUrl: 'https://drive.google.com/file/d/1JmrWf1SkoYPQkrQ9FWLNTR6Lx8HG6TDZ/view?usp=drive_link' },
+    { title: "Introducción", pdfUrl: 'https://drive.google.com/file/d/1RYuOR2lHkr-PHa3AUtJ-lEdoYFFkE8ZM/view?usp=drive_link' },
+    { title: "Estrategias", pdfUrl: 'https://drive.google.com/file/d/112qJkCaY9TP9YTeNBtf7UWwKqUQgWdQF/view?usp=drive_link' },
+    { title: "Implementación", pdfUrl: 'https://drive.google.com/file/d/1-j_t0cxp9DxzpdPjhm-_nCQi9Ms41-JI/view?usp=drive_link' },
+    { title: "Pruebas", pdfUrl: 'https://drive.google.com/file/d/13g5B5CkNgPrifLsbRVmuFn_Y0I_-oFAD/view?usp=drive_link' },
+    { title: "Escalado", pdfUrl: 'https://drive.google.com/file/d/1JmrWf1SkoYPQkrQ9FWLNTR6Lx8HG6TDZ/view?usp=drive_link' },
     { title: "Módulo 6", pdfUrl: 'https://drive.google.com/file/d/14E6RyFFMZgHcjy6xbVJGXoibQxh0RWIs/view?usp=drive_link' },
     { title: "Módulo 7", pdfUrl: 'https://drive.google.com/file/d/1AnXbEeWC9dEG5equDSt12lyqxJFrSiyc/view?usp=drive_link' },
     { title: "Módulo 8", pdfUrl: 'https://drive.google.com/file/d/1DQI91MVMuw0US_dY-jkyIRx-7vfV9z7F/view?usp=drive_link' },
@@ -33,11 +33,11 @@ export default function ModuleViewPage() {
   if (isNaN(moduleIndex) || moduleIndex < 0 || moduleIndex >= modules.length) {
     return (
       <div className="flex h-screen flex-col items-center justify-center bg-transparent text-foreground">
-        <h1 className="text-2xl font-bold text-destructive">Módulo não encontrado</h1>
+        <h1 className="text-2xl font-bold text-destructive">Módulo no encontrado</h1>
         <Link href="/dashboard" className="mt-4">
           <Button variant="outline">
             <ArrowLeft className="mr-2 h-4 w-4" />
-            Voltar ao Painel
+            Volver al Panel
           </Button>
         </Link>
       </div>
@@ -61,19 +61,19 @@ export default function ModuleViewPage() {
               <div>
                 <Link href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground flex items-center mb-2">
                   <ArrowLeft className="mr-2 h-4 w-4" />
-                  Voltar ao Painel
+                  Volver al Panel
                 </Link>
                 <h1 className="text-3xl font-bold text-foreground">{moduleData.title}</h1>
               </div>
               <Button onClick={handleToggleCompletion} disabled={progressLoading} variant={isCompleted ? "default" : "outline"} className="transition-all duration-300">
                 {isCompleted ? <CheckCircle className="mr-2 h-5 w-5" /> : <Circle className="mr-2 h-5 w-5" />}
-                {isCompleted ? 'Módulo Concluído' : 'Marcar como Concluído'}
+                {isCompleted ? 'Módulo Completado' : 'Marcar como Completado'}
               </Button>
             </div>
             <Card className="flex-grow rounded-lg border-2 border-border/50 shadow-lg bg-card/50 backdrop-blur-sm text-center">
               <CardHeader>
-                <CardTitle>Material do Módulo</CardTitle>
-                <CardDescription>Clique no botão abaixo para acessar o conteúdo.</CardDescription>
+                <CardTitle>Material del Módulo</CardTitle>
+                <CardDescription>Haz clic en el botón de abajo para acceder al contenido.</CardDescription>
               </CardHeader>
               <CardContent>
                 <a href={moduleData.pdfUrl} target="_blank" rel="noopener noreferrer">

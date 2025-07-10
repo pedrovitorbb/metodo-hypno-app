@@ -17,12 +17,12 @@ export function Header() {
       await signOut(auth);
       router.push('/login');
     } catch (error) {
-      console.error('Erro ao fazer logout:', error);
+      console.error('Error al cerrar sesión:', error);
     }
   };
 
   const navItems = [
-    { href: '/dashboard', label: 'Painel', icon: Home },
+    { href: '/dashboard', label: 'Panel', icon: Home },
     { href: '/profile', label: 'Perfil', icon: UserCircle },
   ];
 
@@ -30,7 +30,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/50 backdrop-blur-lg">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <Link href="/dashboard" className="text-2xl font-bold text-foreground">
-          Membro<span className="text-primary">Acesso</span>
+          Acceso<span className="text-primary">Miembro</span>
         </Link>
         <nav className="hidden items-center space-x-2 md:flex">
           {navItems.map((item) => {
@@ -56,7 +56,7 @@ export function Header() {
             className="flex items-center gap-2 text-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10"
           >
             <LogOut className="h-5 w-5" />
-            Sair
+            Salir
           </Button>
         </nav>
         <div className="md:hidden">

@@ -13,11 +13,11 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Progress } from '@/components/ui/progress';
 
 const modules = [
-    { title: "Introdução", imageUrl: "https://i.imgur.com/85NgJNK.png" },
-    { title: "Estratégias", imageUrl: "https://i.imgur.com/xJHXKjI.png" },
-    { title: "Implementação", imageUrl: "https://i.imgur.com/JvvCofs.png" },
-    { title: "Testes", imageUrl: "https://i.imgur.com/zdWkm8s.png" },
-    { title: "Escala", imageUrl: "https://i.imgur.com/pMo3NKr.png" },
+    { title: "Introducción", imageUrl: "https://i.imgur.com/85NgJNK.png" },
+    { title: "Estrategias", imageUrl: "https://i.imgur.com/xJHXKjI.png" },
+    { title: "Implementación", imageUrl: "https://i.imgur.com/JvvCofs.png" },
+    { title: "Pruebas", imageUrl: "https://i.imgur.com/zdWkm8s.png" },
+    { title: "Escalado", imageUrl: "https://i.imgur.com/pMo3NKr.png" },
     { title: "Módulo 6", imageUrl: "https://imgur.com/OIBJvzm.png" },
     { title: "Módulo 7", imageUrl: "https://imgur.com/zElS168.png" },
     { title: "Módulo 8", imageUrl: "https://imgur.com/4w9q4jI.png" },
@@ -30,16 +30,16 @@ const ModuleCard = ({ title, index, isCompleted, imageUrl }: { title: string, in
       <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/80 transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl h-full flex flex-col overflow-hidden">
         <CardContent className="p-0 flex-grow flex flex-col justify-between">
             <div className="relative w-full h-[28rem]">
-                 <Image src={imageUrl} alt={`Capa do módulo ${title}`} layout="fill" objectFit="cover" />
+                 <Image src={imageUrl} alt={`Portada del módulo ${title}`} layout="fill" objectFit="cover" />
             </div>
             <div className="p-4 bg-card/80">
                 {isCompleted ?
                     <div className="text-xs text-green-400 flex items-center font-semibold">
-                        <CheckCircle className="mr-1.5 h-4 w-4"/> Concluído
+                        <CheckCircle className="mr-1.5 h-4 w-4"/> Completado
                     </div>
                     :
                     <div className="text-xs text-muted-foreground flex items-center">
-                        <Circle className="mr-1.5 h-4 w-4"/> Pendente
+                        <Circle className="mr-1.5 h-4 w-4"/> Pendiente
                     </div>
                 }
             </div>
@@ -58,7 +58,7 @@ const WelcomeHeader = () => {
 
   return (
     <h1 className="mb-6 text-center text-4xl font-bold text-foreground">
-      Bem-vindo(a) de volta, {user?.displayName || 'Membro'}!
+      ¡Bienvenido(a) de vuelta, {user?.displayName || 'Miembro'}!
     </h1>
   );
 };
@@ -88,11 +88,11 @@ export default function DashboardPage() {
             ) : (
                 <>
                     <div className="flex justify-between items-center mb-2">
-                        <p className="text-lg font-semibold text-foreground">Seu Progresso</p>
+                        <p className="text-lg font-semibold text-foreground">Tu Progreso</p>
                         <p className="font-bold text-primary text-lg">{`${Math.round(progressPercentage)}%`}</p>
                     </div>
                     <Progress value={progressPercentage} className="w-full h-3" />
-                    <p className="text-sm text-muted-foreground mt-2 text-right">{`${completedModulesCount} de ${totalModules} módulos concluídos`}</p>
+                    <p className="text-sm text-muted-foreground mt-2 text-right">{`${completedModulesCount} de ${totalModules} módulos completados`}</p>
                 </>
             )}
         </div>
