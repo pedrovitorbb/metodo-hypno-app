@@ -10,6 +10,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { CheckCircle, Circle } from 'lucide-react';
 import Image from 'next/image';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Progress } from '@/components/ui/progress';
 
 const modules = [
     { title: "Introdução", imageUrl: "https://i.imgur.com/85NgJNK.png" },
@@ -56,7 +57,7 @@ const WelcomeHeader = () => {
   }
 
   return (
-    <h1 className="mb-12 text-center text-4xl font-bold text-foreground">
+    <h1 className="mb-6 text-center text-4xl font-bold text-foreground">
       Bem-vindo(a) de volta, {user?.displayName || 'Membro'}!
     </h1>
   );
@@ -68,10 +69,34 @@ export default function DashboardPage() {
   
   const isLoading = authLoading || progressLoading;
 
+  const totalModules = modules.length;
+  const completedModulesCount = progress.completedModules.length;
+  const progressPercentage = totalModules > 0 ? (completedModulesCount / totalModules) * 100 : 0;
+
   return (
     <div className="flex flex-col w-full flex-grow items-center justify-center bg-transparent p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto text-center">
         <WelcomeHeader />
+
+        <div className="w-full max-w-3xl mx-auto mb-12">
+            {isLoading ? (
+                <div className="space-y-2">
+                    <Skeleton className="h-4 w-1/4" />
+                    <Skeleton className="h-6 w-full" />
+                    <Skeleton className="h-4 w-1/3 ml-auto" />
+                </div>
+            ) : (
+                <>
+                    <div className="flex justify-between items-center mb-2">
+                        <p className="text-lg font-semibold text-foreground">Seu Progresso</p>
+                        <p className="font-bold text-primary text-lg">{`${Math.round(progressPercentage)}%`}</p>
+                    </div>
+                    <Progress value={progressPercentage} className="w-full h-3" />
+                    <p className="text-sm text-muted-foreground mt-2 text-right">{`${completedModulesCount} de ${totalModules} módulos concluídos`}</p>
+                </>
+            )}
+        </div>
+
         <Carousel
             opts={{
               align: "start",
