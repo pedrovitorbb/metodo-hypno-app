@@ -35,19 +35,19 @@ const modules = [
   },
   {
     imageUrl: 'https://i.imgur.com/OIBJvzm.png',
-    pdfUrl: null,
+    pdfUrl: 'https://drive.google.com/file/d/14E6RyFFMZgHcjy6xbVJGXoibQxh0RWIs/view?usp=drive_link',
   },
   {
     imageUrl: 'https://i.imgur.com/zElS168.png',
-    pdfUrl: null,
+    pdfUrl: 'https://drive.google.com/file/d/1AnXbEeWC9dEG5equDSt12lyqxJFrSiyc/view?usp=drive_link',
   },
   {
     imageUrl: 'https://i.imgur.com/4w9q4jI.png',
-    pdfUrl: null,
+    pdfUrl: 'https://drive.google.com/file/d/1DQI91MVMuw0US_dY-jkyIRx-7vfV9z7F/view?usp=drive_link',
   },
   {
     imageUrl: 'https://i.imgur.com/alCDUIE.png',
-    pdfUrl: null,
+    pdfUrl: 'https://drive.google.com/file/d/15r77W9nTfCjAIbEyo5jf-8EDtTrb4HIA/view?usp=drive_link',
   },
 ];
 
