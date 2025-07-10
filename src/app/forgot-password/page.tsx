@@ -17,6 +17,8 @@ const formSchema = z.object({
   email: z.string().email({ message: 'Por favor, insira um e-mail válido.' }),
 });
 
+export const dynamic = 'force-dynamic';
+
 export default function ForgotPasswordPage() {
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);

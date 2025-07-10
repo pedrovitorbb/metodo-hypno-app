@@ -20,6 +20,8 @@ const formSchema = z.object({
   password: z.string().min(6, { message: 'A senha deve ter no mínimo 6 caracteres.' }),
 });
 
+export const dynamic = 'force-dynamic';
+
 export default function RegisterPage() {
   const router = useRouter();
   const { toast } = useToast();
