@@ -9,6 +9,7 @@ import { useProgress } from '@/hooks/useProgress';
 import { Skeleton } from '@/components/ui/skeleton';
 import { CheckCircle, Circle } from 'lucide-react';
 import Image from 'next/image';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const modules = [
     { title: "Introdução", imageUrl: "https://i.imgur.com/85NgJNK.png" },
@@ -16,6 +17,10 @@ const modules = [
     { title: "Implementação", imageUrl: "https://i.imgur.com/JvvCofs.png" },
     { title: "Testes", imageUrl: "https://i.imgur.com/zdWkm8s.png" },
     { title: "Escala", imageUrl: "https://i.imgur.com/pMo3NKr.png" },
+    { title: "Módulo 6", imageUrl: "https://imgur.com/OIBJvzm.png" },
+    { title: "Módulo 7", imageUrl: "https://imgur.com/zElS168.png" },
+    { title: "Módulo 8", imageUrl: "https://imgur.com/4w9q4jI.png" },
+    { title: "Módulo 9", imageUrl: "https://imgur.com/alCDUIE.png" },
 ];
 
 const ModuleCard = ({ title, index, isCompleted, imageUrl }: { title: string, index: number, isCompleted: boolean, imageUrl: string }) => {
@@ -23,7 +28,7 @@ const ModuleCard = ({ title, index, isCompleted, imageUrl }: { title: string, in
     <Link href={`/dashboard/module/${index}`} className="block group">
       <Card className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/80 transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl h-full flex flex-col overflow-hidden">
         <CardContent className="p-0 flex-grow flex flex-col justify-between">
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-80">
                  <Image src={imageUrl} alt={`Capa do módulo ${title}`} layout="fill" objectFit="cover" />
             </div>
             <div className="p-4 bg-card/80">
@@ -67,23 +72,40 @@ export default function DashboardPage() {
     <div className="flex flex-col w-full flex-grow items-center justify-center bg-transparent p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto text-center">
         <WelcomeHeader />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {isLoading ? (
-            Array.from({ length: 5 }).map((_, index) => (
-                <Skeleton key={index} className="h-72 w-full bg-card/80" />
-            ))
-          ) : (
-            modules.map((item, index) => (
-              <ModuleCard 
-                key={index} 
-                title={item.title} 
-                index={index} 
-                isCompleted={progress.completedModules.includes(index)}
-                imageUrl={item.imageUrl}
-              />
-            ))
-          )}
-        </div>
+        <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {isLoading ? (
+                Array.from({ length: 5 }).map((_, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Skeleton className="h-96 w-full bg-card/80" />
+                    </div>
+                  </CarouselItem>
+                ))
+              ) : (
+                modules.map((item, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                     <div className="p-1">
+                        <ModuleCard 
+                          title={item.title} 
+                          index={index} 
+                          isCompleted={progress.completedModules.includes(index)}
+                          imageUrl={item.imageUrl}
+                        />
+                      </div>
+                  </CarouselItem>
+                ))
+              )}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
       </div>
     </div>
   );
