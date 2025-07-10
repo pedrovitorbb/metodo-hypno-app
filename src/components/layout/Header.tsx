@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Home, User, LogOut } from 'lucide-react';
+import { Home, LogOut } from 'lucide-react';
 import { auth } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
 
@@ -22,7 +22,6 @@ export function Header() {
 
   const navItems = [
     { href: '/dashboard', label: 'Home', icon: Home },
-    { href: '/dashboard/profile', label: 'Perfil', icon: User },
   ];
 
   return (
