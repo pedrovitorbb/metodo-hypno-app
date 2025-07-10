@@ -12,7 +12,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Skeleton } from '@/components/ui/skeleton';
-import { Button } from '@/components/ui/button';
 
 export default function DashboardPage() {
   const { plan, loading: authLoading } = useAuth();
