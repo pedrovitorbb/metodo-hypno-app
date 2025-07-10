@@ -63,12 +63,50 @@ const WelcomeHeader = () => {
   );
 };
 
+const DashboardSkeleton = () => {
+    return (
+        <div className="flex flex-col w-full flex-grow items-center justify-center bg-transparent p-4 sm:p-6 lg:p-8">
+            <div className="container mx-auto text-center">
+                <Skeleton className="h-10 w-80 mb-12 mx-auto" />
+                <div className="w-full max-w-3xl mx-auto mb-12">
+                    <div className="space-y-2">
+                        <Skeleton className="h-4 w-1/4" />
+                        <Skeleton className="h-6 w-full" />
+                        <Skeleton className="h-4 w-1/3 ml-auto" />
+                    </div>
+                </div>
+                <Carousel
+                    opts={{ align: "start" }}
+                    className="w-full"
+                >
+                    <CarouselContent className="-ml-4">
+                        {Array.from({ length: 5 }).map((_, index) => (
+                            <CarouselItem key={index} className="pl-4 sm:basis-1/2 lg:basis-1/3">
+                                <div className="p-1">
+                                    <Skeleton className="h-[30rem] w-full bg-card/80" />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="hidden sm:flex" />
+                    <CarouselNext className="hidden sm:flex" />
+                </Carousel>
+            </div>
+        </div>
+    );
+};
+
+
 export default function DashboardPage() {
   const { user, loading: authLoading } = useAuth();
   const { progress, loading: progressLoading } = useProgress(user?.uid);
   
   const isLoading = authLoading || progressLoading;
 
+  if (isLoading) {
+    return <DashboardSkeleton />;
+  }
+  
   const totalModules = modules.length;
   const completedModulesCount = progress.completedModules.length;
   const progressPercentage = totalModules > 0 ? (completedModulesCount / totalModules) * 100 : 0;
@@ -79,22 +117,14 @@ export default function DashboardPage() {
         <WelcomeHeader />
 
         <div className="w-full max-w-3xl mx-auto mb-12">
-            {isLoading ? (
-                <div className="space-y-2">
-                    <Skeleton className="h-4 w-1/4" />
-                    <Skeleton className="h-6 w-full" />
-                    <Skeleton className="h-4 w-1/3 ml-auto" />
+            <>
+                <div className="flex justify-between items-center mb-2">
+                    <p className="text-lg font-semibold text-foreground">Tu Progreso</p>
+                    <p className="font-bold text-primary text-lg">{`${Math.round(progressPercentage)}%`}</p>
                 </div>
-            ) : (
-                <>
-                    <div className="flex justify-between items-center mb-2">
-                        <p className="text-lg font-semibold text-foreground">Tu Progreso</p>
-                        <p className="font-bold text-primary text-lg">{`${Math.round(progressPercentage)}%`}</p>
-                    </div>
-                    <Progress value={progressPercentage} className="w-full h-3" />
-                    <p className="text-sm text-muted-foreground mt-2 text-right">{`${completedModulesCount} de ${totalModules} módulos completados`}</p>
-                </>
-            )}
+                <Progress value={progressPercentage} className="w-full h-3" />
+                <p className="text-sm text-muted-foreground mt-2 text-right">{`${completedModulesCount} de ${totalModules} módulos completados`}</p>
+            </>
         </div>
 
         <Carousel
@@ -105,16 +135,7 @@ export default function DashboardPage() {
             className="w-full"
           >
             <CarouselContent className="-ml-4">
-              {isLoading ? (
-                Array.from({ length: 5 }).map((_, index) => (
-                  <CarouselItem key={index} className="pl-4 sm:basis-1/2 lg:basis-1/3">
-                    <div className="p-1">
-                      <Skeleton className="h-[30rem] w-full bg-card/80" />
-                    </div>
-                  </CarouselItem>
-                ))
-              ) : (
-                modules.map((item, index) => (
+                {modules.map((item, index) => (
                   <CarouselItem key={index} className="pl-4 sm:basis-1/2 lg:basis-1/3">
                      <div className="p-1">
                         <ModuleCard 
@@ -125,8 +146,7 @@ export default function DashboardPage() {
                         />
                       </div>
                   </CarouselItem>
-                ))
-              )}
+                ))}
             </CarouselContent>
             <CarouselPrevious className="hidden sm:flex" />
             <CarouselNext className="hidden sm:flex" />

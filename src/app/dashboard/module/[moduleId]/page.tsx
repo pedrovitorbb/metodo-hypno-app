@@ -1,7 +1,7 @@
 
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 import { ArrowLeft, CheckCircle, Circle, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { useAuth } from '@/hooks/useAuth';
 import { useProgress } from '@/hooks/useProgress';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const modules = [
     { title: "Introducción", pdfUrl: 'https://drive.google.com/file/d/1RYuOR2lHkr-PHa3AUtJ-lEdoYFFkE8ZM/view?usp=drive_link' },
@@ -22,13 +23,49 @@ const modules = [
     { title: "Módulo 9", pdfUrl: 'https://drive.google.com/file/d/15r77W9nTfCjAIbEyo5jf-8EDtTrb4HIA/view?usp=drive_link' },
 ];
 
+const ModuleViewSkeleton = () => (
+    <div className="flex flex-col flex-grow bg-transparent py-8 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto flex flex-col items-center justify-center flex-grow">
+        <div className="w-full max-w-3xl">
+            <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                 <Skeleton className="h-5 w-32 mb-2" />
+                 <Skeleton className="h-9 w-64" />
+              </div>
+              <Skeleton className="h-10 w-48" />
+            </div>
+            <Card className="flex-grow rounded-lg border-2 border-border/50 shadow-lg bg-card/50 backdrop-blur-sm text-center">
+              <CardHeader>
+                <Skeleton className="h-6 w-40 mx-auto" />
+                <Skeleton className="h-4 w-72 mx-auto mt-2" />
+              </CardHeader>
+              <CardContent>
+                <Skeleton className="h-12 w-44 mx-auto" />
+              </CardContent>
+            </Card>
+        </div>
+      </div>
+    </div>
+)
+
 export default function ModuleViewPage() {
   const params = useParams();
   const moduleId = Array.isArray(params.moduleId) ? params.moduleId[0] : params.moduleId;
   const moduleIndex = parseInt(moduleId, 10);
   
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const { progress, toggleModuleCompletion, loading: progressLoading } = useProgress(user?.uid);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  const isLoading = authLoading || progressLoading || !isClient;
+
+  if (isLoading) {
+    return <ModuleViewSkeleton />;
+  }
 
   if (isNaN(moduleIndex) || moduleIndex < 0 || moduleIndex >= modules.length) {
     return (
