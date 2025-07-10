@@ -9,10 +9,9 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-transparent">
       <Header />
       <main className="flex-grow flex flex-col">{children}</main>
-      <Footer />
     </div>
   );
 }

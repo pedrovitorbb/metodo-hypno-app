@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Acceso de miembro',
+  title: 'Membro Acesso',
   description: 'Área de Membros Exclusiva',
 };
 
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="dark">
       <body>
         {children}
         <Toaster />

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Loader2, Mail, CheckCircle2 } from 'lucide-react';
+import { Loader2, Mail, CheckCircle2, ArrowLeft } from 'lucide-react';
 import { auth } from '@/lib/firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
 
@@ -46,11 +46,11 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <div className="flex min-h-screen w-full items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md shadow-2xl">
+    <div className="flex min-h-screen w-full items-center justify-center bg-transparent p-4">
+      <Card className="w-full max-w-md shadow-2xl bg-card/50 backdrop-blur-lg border-border/50">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary-foreground">Recuperar Senha</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-3xl font-bold text-foreground">Recuperar Senha</CardTitle>
+          <CardDescription className="text-muted-foreground">
             Insira seu email para redefinir sua senha
           </CardDescription>
         </CardHeader>
@@ -63,26 +63,29 @@ export default function ForgotPasswordPage() {
                 Verifique sua caixa de entrada para as instruções de redefinição.
               </AlertDescription>
               <Link href="/login" className="block mt-4">
-                 <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">Voltar para Login</Button>
+                 <Button variant="outline" className="w-full group">
+                    <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"/>
+                    Voltar para Login
+                 </Button>
               </Link>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="seu@email.com"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="pl-10 text-base bg-background"
+                  className="pl-10 text-base bg-input border-border/50 focus:border-primary"
                   disabled={isLoading}
                 />
               </div>
               {error && (
-                <Alert variant="destructive">
+                <Alert variant="destructive" className="bg-destructive/20 border-destructive/50 text-destructive-foreground">
                   <AlertDescription>{error}</AlertDescription>
                 </Alert>
               )}
@@ -91,13 +94,13 @@ export default function ForgotPasswordPage() {
                 className="w-full bg-accent text-accent-foreground text-lg font-semibold hover:bg-accent/90 transition-all duration-300"
                 disabled={isLoading}
               >
-                {isLoading ? <Loader2 className="animate-spin" /> : 'Enviar Email'}
+                {isLoading ? <Loader2 className="animate-spin" /> : 'Enviar Email de Recuperação'}
               </Button>
             </form>
           )}
           <div className="mt-6 text-center text-sm text-muted-foreground">
             Lembrou a senha?{' '}
-            <Link href="/login" className="font-bold text-primary-foreground hover:underline">
+            <Link href="/login" className="font-bold text-accent hover:underline">
               Login
             </Link>
           </div>
