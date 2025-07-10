@@ -108,7 +108,7 @@ export default function LoginPage() {
               href="/forgot-password"
               className="font-medium text-primary/80 hover:underline hover:text-primary"
             >
-              Esqueceu a senha?
+              ¿Olvidaste tu contraseña?
             </Link>
           </div>
         </CardContent>
