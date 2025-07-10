@@ -11,7 +11,6 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel';
 import { Card, CardContent } from '@/components/ui/card';
-import { Footer } from '@/components/layout/Footer';
 
 const modules = [
   {
@@ -83,7 +82,7 @@ export default function DashboardPage() {
   return (
     <div className="flex flex-col min-h-full w-full bg-background">
       <div className="flex-grow flex items-end justify-center">
-        <div className="container mx-auto pb-12">
+        <div className="container mx-auto pb-20">
             <h1 className="mb-12 text-center text-4xl font-bold text-primary">
             ¡Bienvenidos!
             </h1>
@@ -108,7 +107,6 @@ export default function DashboardPage() {
             </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }
