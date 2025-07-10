@@ -5,7 +5,6 @@ import { Home, User, LogOut } from 'lucide-react';
 export function Header() {
   const navItems = [
     { href: '/dashboard', label: 'Home', icon: Home },
-    { href: '/dashboard/profile', label: 'Perfil', icon: User },
   ];
 
   return (
