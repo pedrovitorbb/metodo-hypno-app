@@ -1,7 +1,7 @@
 'use client';
 
-import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { BookOpen, Target, Code, TestTube2, Scaling } from 'lucide-react';
 import React from 'react';
 
@@ -37,27 +37,40 @@ export default function DashboardPage() {
   return (
     <div className="w-full bg-background py-12">
       <div className="container mx-auto">
-        <h1 className="mb-8 text-center text-4xl font-bold text-foreground">
+        <h1 className="mb-12 text-center text-4xl font-bold text-foreground">
           Módulos do Curso
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full max-w-4xl mx-auto"
+        >
+          <CarouselContent>
             {modules.map((mod, index) => (
-              <Card 
-                key={index} 
-                className="bg-secondary/50 border-border/60 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-primary/60"
-              >
-                <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
-                  <div className="p-2 bg-primary/10 rounded-lg">
-                    {mod.icon}
-                  </div>
-                  <CardTitle className="text-xl font-bold text-foreground">{mod.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-muted-foreground">{mod.description}</CardDescription>
-                </CardContent>
-              </Card>
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1 h-full">
+                  <Card 
+                    className="bg-secondary/50 border-border/60 shadow-lg transition-transform duration-300 hover:scale-105 hover:border-primary/60 h-full flex flex-col"
+                  >
+                    <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                      <div className="p-2 bg-primary/10 rounded-lg">
+                        {mod.icon}
+                      </div>
+                      <CardTitle className="text-xl font-bold text-foreground">{mod.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <CardDescription className="text-muted-foreground">{mod.description}</CardDescription>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
             ))}
-        </div>
+          </CarouselContent>
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
+        </Carousel>
       </div>
     </div>
   );
