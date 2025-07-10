@@ -60,7 +60,7 @@ export default function DashboardPage() {
               {modules.map((item, index) => (
                 <CarouselItem key={index} className="basis-full md:basis-1/2">
                   <div className="p-1 md:p-4">
-                    <Card className="overflow-hidden border-2 border-primary/20 bg-card shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/40">
+                    <Card className="overflow-hidden border-2 border-primary/20 bg-card shadow-lg transition-transform duration-300 ease-in-out hover:scale-102 hover:shadow-primary/40">
                       <CardContent className="relative flex aspect-[3/4] items-center justify-center p-0">
                         <Image
                           src={item.imageUrl}
