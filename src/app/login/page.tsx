@@ -20,8 +20,6 @@ const formSchema = z.object({
   password: z.string().min(1, { message: 'Por favor, insira sua senha.' }),
 });
 
-export const dynamic = 'force-dynamic';
-
 export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
