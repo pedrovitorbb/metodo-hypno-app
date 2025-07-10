@@ -60,9 +60,9 @@ const modules = [
 
 export default function DashboardPage() {
   return (
-    <div className="w-full bg-white py-12">
+    <div className="w-full bg-[#003366] py-12">
       <div className="container mx-auto">
-        <h1 className="mb-8 text-center text-4xl font-bold text-[#003366]">
+        <h1 className="mb-8 text-center text-4xl font-bold text-[#FFD700]">
           Módulos do Curso
         </h1>
         <Carousel
