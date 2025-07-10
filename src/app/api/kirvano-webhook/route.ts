@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { adminAuth } from '@/lib/firebase/admin';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * Endpoint da API para receber webhooks da Kirvano.
  * Cria ou atualiza um usuário no Firebase, atribuindo um plano com base no produto comprado.
