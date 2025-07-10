@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -20,7 +20,7 @@ const formSchema = z.object({
   password: z.string().min(1, { message: 'Por favor, insira sua senha.' }),
 });
 
-function LoginComponent() {
+export default function LoginPage() {
   const router = useRouter();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
@@ -102,13 +102,4 @@ function LoginComponent() {
       </div>
     </div>
   );
-}
-
-
-export default function LoginPage() {
-  return (
-    <Suspense fallback={<div className="flex h-screen w-full items-center justify-center"><Loader className="h-12 w-12 text-primary" /></div>}>
-      <LoginComponent />
-    </Suspense>
-  )
 }
