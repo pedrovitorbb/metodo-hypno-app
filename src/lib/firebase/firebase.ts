@@ -1,23 +1,22 @@
 
-import { initializeApp, getApps, getApp } from "firebase/app";
+import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { firebaseConfig } from "./config";
-import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
+import { initializeAppCheck, ReCaptchaV3Provider, type AppCheck } from "firebase/app-check";
 
-// Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
+let app: FirebaseApp;
+let appCheck: AppCheck | undefined;
 
-// Passar `true` para `getAuth` desativa a verificação do App Check.
-// Isso é uma solução para ambientes de build onde a configuração do App Check
-// pode ser complexa e causar falhas.
-const auth = getAuth(app);
-const db = getFirestore(app);
+if (getApps().length === 0) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApp();
+}
 
-// Initialize App Check only in the browser
 if (typeof window !== 'undefined') {
   try {
-    initializeAppCheck(app, {
+    appCheck = initializeAppCheck(app, {
       provider: new ReCaptchaV3Provider('6Lcr_OgpAAAAADsFkX_QPp7Pj8OecbVp1N6jF_k-'),
       isTokenAutoRefreshEnabled: true
     });
@@ -26,5 +25,7 @@ if (typeof window !== 'undefined') {
   }
 }
 
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { app, auth, db };
+export { app, auth, db, appCheck };
