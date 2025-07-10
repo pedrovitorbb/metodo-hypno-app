@@ -23,7 +23,6 @@ export function Header() {
 
   const navItems = [
     { href: '/dashboard', label: 'Panel', icon: Home },
-    { href: '/profile', label: 'Perfil', icon: UserCircle },
   ];
 
   return (
