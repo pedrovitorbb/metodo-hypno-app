@@ -1,3 +1,4 @@
+
 'use client';
 
 import React from 'react';
@@ -10,11 +11,11 @@ import { useAuth } from '@/hooks/useAuth';
 import { useProgress } from '@/hooks/useProgress';
 
 const modules = [
-    { title: "Introdução", pdfUrl: 'https://drive.google.com/file/d/1RYuOR2lHkr-PHa3AUtJ-lEdoYFFkE8ZM/preview' },
-    { title: "Estratégias", pdfUrl: 'https://drive.google.com/file/d/112qJkCaY9TP9YTeNBtf7UWwKqUQgWdQF/preview' },
-    { title: "Implementação", pdfUrl: 'https://drive.google.com/file/d/1-j_t0cxp9DxzpdPjhm-_nCQi9Ms41-JI/preview' },
-    { title: "Testes", pdfUrl: 'https://drive.google.com/file/d/13g5B5CkNgPrifLsbRVmuFn_Y0I_-oFAD/preview' },
-    { title: "Escala", pdfUrl: 'https://drive.google.com/file/d/1JmrWf1SkoYPQkrQ9FWLNTR6Lx8HG6TDZ/preview' },
+    { title: "Introdução", pdfUrl: 'https://drive.google.com/file/d/1RYuOR2lHkr-PHa3AUtJ-lEdoYFFkE8ZM/view?usp=drive_link' },
+    { title: "Estratégias", pdfUrl: 'https://drive.google.com/file/d/112qJkCaY9TP9YTeNBtf7UWwKqUQgWdQF/view?usp=drive_link' },
+    { title: "Implementação", pdfUrl: 'https://drive.google.com/file/d/1-j_t0cxp9DxzpdPjhm-_nCQi9Ms41-JI/view?usp=drive_link' },
+    { title: "Testes", pdfUrl: 'https://drive.google.com/file/d/13g5B5CkNgPrifLsbRVmuFn_Y0I_-oFAD/view?usp=drive_link' },
+    { title: "Escala", pdfUrl: 'https://drive.google.com/file/d/1JmrWf1SkoYPQkrQ9FWLNTR6Lx8HG6TDZ/view?usp=drive_link' },
 ];
 
 export default function ModuleViewPage() {
@@ -50,7 +51,7 @@ export default function ModuleViewPage() {
 
   return (
     <div className="flex flex-col flex-grow bg-transparent py-8 px-4 sm:px-6 lg:px-8">
-      <div className="container mx-auto flex-grow flex flex-col">
+      <div className="container mx-auto flex-grow flex flex-col h-full">
         <div className="mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <Link href="/dashboard" className="text-sm text-muted-foreground hover:text-foreground flex items-center mb-2">
