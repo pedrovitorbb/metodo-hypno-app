@@ -6,7 +6,7 @@ import { Toaster } from '@/components/ui/toaster';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Membro Acesso',
+  title: 'Acceso de miembro',
   description: 'Área de Membros Exclusiva',
 };
 

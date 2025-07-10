@@ -57,7 +57,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen w-full items-center justify-center bg-background p-4 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
       <Card className="w-full max-w-md border-border/40 bg-card/50 shadow-2xl backdrop-blur-lg">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Membro Acesso</CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary">Acceso de miembro</CardTitle>
           <CardDescription className="text-muted-foreground">
             Faça login para continuar na plataforma
           </CardDescription>
