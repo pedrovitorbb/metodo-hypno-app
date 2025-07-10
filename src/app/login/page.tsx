@@ -59,7 +59,7 @@ export default function LoginPage() {
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold text-primary">Acceso de miembro</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Faça login para continuar na plataforma
+            Inicia sesión para continuar en la plataform
           </CardDescription>
         </CardHeader>
         <CardContent>
