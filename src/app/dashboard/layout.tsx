@@ -1,27 +1,16 @@
 'use client';
 
-<<<<<<< HEAD
-import { Footer } from '@/components/layout/Footer';
-import { Header } from '@/components/layout/Header';
-=======
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/hooks/use-auth';
 import { Loader } from '@/components/ui/loader';
 import { DashboardHeader } from '@/components/dashboard-header';
->>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
 
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-<<<<<<< HEAD
-  return (
-    <div className="flex min-h-screen flex-col bg-transparent">
-      <Header />
-      <main className="flex-grow flex flex-col">{children}</main>
-=======
   const { user, loading } = useAuth();
   const router = useRouter();
 
@@ -43,7 +32,6 @@ export default function DashboardLayout({
     <div className="flex min-h-screen w-full flex-col bg-background">
       <DashboardHeader />
       <main className="flex-1">{children}</main>
->>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
     </div>
   );
 }

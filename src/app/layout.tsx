@@ -1,18 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-<<<<<<< HEAD
-
-export const metadata: Metadata = {
-  title: 'Acceso Miembros',
-  description: 'Área de Miembros Exclusiva',
-=======
 import { AuthProvider } from '@/components/auth-provider';
 
 export const metadata: Metadata = {
   title: 'Método Hypno',
   description: 'Your modern members area.',
->>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
 };
 
 export default function RootLayout({
@@ -21,12 +14,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-<<<<<<< HEAD
-    <html lang="es" className="dark">
-      <body>
-        {children}
-        <Toaster />
-=======
     <html lang="en" className="dark">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,7 +28,6 @@ export default function RootLayout({
           {children}
           <Toaster />
         </AuthProvider>
->>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
       </body>
     </html>
   );

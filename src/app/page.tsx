@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { redirect } from 'next/navigation';
-
-export default function Home() {
-  redirect('/login');
-=======
 'use client';
 
 import { useEffect } from 'react';
@@ -30,5 +24,4 @@ export default function Home() {
       <Loader className="h-12 w-12 text-primary" />
     </div>
   );
->>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
 }

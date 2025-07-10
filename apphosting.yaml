@@ -5,8 +5,6 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
-<<<<<<< HEAD
-=======
 
 # This rewrites all requests to the Next.js server
 headers:
@@ -20,4 +18,3 @@ headers:
 # rewrites:
 # - source: /
 #   destination: /index.html
->>>>>>> 7a652146bb8f77cc6d55e152c78ed887b5ab9862
