@@ -100,7 +100,7 @@ export default function LoginPage() {
               className="w-full bg-primary text-primary-foreground text-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
               disabled={isLoading}
             >
-              {isLoading ? <Loader2 className="animate-spin" /> : 'ingresar'}
+              {isLoading ? <Loader2 className="animate-spin" /> : 'Entrar'}
             </Button>
           </form>
           <div className="mt-4 text-center text-sm">
