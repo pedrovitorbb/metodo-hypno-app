@@ -10,8 +10,6 @@ import { Loader } from '@/components/ui/loader';
 import { modules } from '@/lib/modules-data';
 import { useAuth } from '@/hooks/use-auth';
 
-export const dynamic = 'force-dynamic';
-
 export default function ModulePage({ params }: { params: { moduleId: string } }) {
   const { moduleId } = params;
   const router = useRouter();
