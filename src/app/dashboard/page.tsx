@@ -46,7 +46,7 @@ export default function DashboardPage() {
     <div className="w-full bg-background py-12">
       <div className="container mx-auto">
         <h1 className="mb-12 text-center text-4xl font-bold text-primary">
-          Módulos do Curso
+          ¡Bienvenidos!
         </h1>
         <div className="flex justify-center">
           <Carousel
