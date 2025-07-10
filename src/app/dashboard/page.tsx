@@ -13,40 +13,40 @@ import { Button } from '@/components/ui/button';
 
 const modules = [
   {
-    title: 'Luto Infantil',
+    title: 'Introdução à Hipnoterapia',
     course: 'Curso de Hipnoterapia',
     image: 'https://placehold.co/400x600/001f3f/ffffff.png',
-    dataAiHint: 'grief therapy',
+    dataAiHint: 'welcome introduction',
   },
   {
-    title: 'Ansiedade e Estresse',
+    title: 'Técnicas de Indução',
     course: 'Curso de Hipnoterapia',
     image: 'https://placehold.co/400x600/001f3f/ffffff.png',
-    dataAiHint: 'anxiety relief',
+    dataAiHint: 'hypnosis technique',
   },
   {
-    title: 'Fobias e Medos',
+    title: 'Aprofundamento do Transe',
+    course: 'Curso de Hipnoterapia',
+    image: 'https://placehold.co/400x600/001f3f/ffffff.png',
+    dataAiHint: 'deep focus',
+  },
+  {
+    title: 'Sugestões Terapêuticas',
+    course: 'Curso de Hipnoterapia',
+    image: 'https://placehold.co/400x600/001f3f/ffffff.png',
+    dataAiHint: 'therapy session',
+  },
+  {
+    title: 'Tratamento de Fobias',
     course: 'Curso de Hipnoterapia',
     image: 'https://placehold.co/400x600/001f3f/ffffff.png',
     dataAiHint: 'overcoming fear',
   },
   {
-    title: 'Hipnose Ericksoniana',
+    title: 'Controle da Dor',
     course: 'Curso de Hipnoterapia',
     image: 'https://placehold.co/400x600/001f3f/ffffff.png',
-    dataAiHint: 'hypnosis concept',
-  },
-  {
-    title: 'Regressão de Memória',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600/001f3f/ffffff.png',
-    dataAiHint: 'memory psychology',
-  },
-  {
-    title: 'Auto-hipnose',
-    course: 'Curso de Hipnoterapia',
-    image: 'https://placehold.co/400x600/001f3f/ffffff.png',
-    dataAiHint: 'self reflection',
+    dataAiHint: 'pain relief',
   },
 ];
 
