@@ -80,7 +80,7 @@ const CarouselCard = ({ item, index }: { item: typeof modules[0], index: number 
 
 export default function DashboardPage() {
   return (
-    <div className="w-full bg-background py-12">
+    <div className="flex h-full w-full items-center justify-center bg-background">
       <div className="container mx-auto">
         <h1 className="mb-12 text-center text-4xl font-bold text-primary">
           ¡Bienvenidos!
